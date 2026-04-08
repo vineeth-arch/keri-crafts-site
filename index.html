@@ -207,8 +207,8 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 0.82fr 1.18fr;
-      gap: 42px;
+      grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
+      gap: 56px;
       align-items: center;
     }
 
@@ -225,6 +225,7 @@
       place-items: center;
       min-height: 340px;
       padding: 24px;
+      width: 100%;
     }
 
     .hero-logo {
@@ -235,14 +236,15 @@
 
     .hero h1 {
       font-weight: 900;
-      font-size: clamp(3rem, 6vw, 5rem);
-      line-height: 0.95;
-      margin-bottom: 16px;
+      font-size: clamp(3rem, 5.4vw, 4.8rem);
+      line-height: 0.96;
+      margin-bottom: 18px;
+      max-width: 12ch;
     }
 
     .hero-lead {
       font-size: 1.12rem;
-      max-width: 60ch;
+      max-width: 40rem;
       color: #37453b;
       margin-bottom: 14px;
       font-weight: 400;
@@ -253,7 +255,7 @@
       gap: 12px;
       margin-bottom: 24px;
       color: #415045;
-      max-width: 62ch;
+      max-width: 40rem;
     }
 
     .hero-actions {
@@ -543,7 +545,6 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      .hero-grid > :first-child,
       .contact-grid > :first-child,
       .footer-grid > :first-child {
         grid-column: 1 / -1;
@@ -571,8 +572,25 @@
         grid-template-columns: 1fr;
       }
 
-      .hero-logo-wrap { min-height: 250px; }
-      .hero h1 { font-size: 3.2rem; }
+      .hero-logo-wrap {
+        min-height: 250px;
+        order: 1;
+      }
+
+      .hero-grid > div:last-child {
+        order: 2;
+      }
+
+      .hero h1 {
+        font-size: 3.2rem;
+        max-width: none;
+      }
+
+      .hero-lead,
+      .hero-copy {
+        max-width: none;
+      }
+
       .footer { padding-bottom: 104px; }
       .sticky-cta { display: block; }
     }
