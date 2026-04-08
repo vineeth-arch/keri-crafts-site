@@ -16,7 +16,6 @@
       font-style: normal;
       font-display: swap;
     }
-
     @font-face {
       font-family: "Satoshi";
       src: url("fonts/Satoshi-Bold.otf") format("opentype");
@@ -24,7 +23,6 @@
       font-style: normal;
       font-display: swap;
     }
-
     @font-face {
       font-family: "Satoshi";
       src: url("fonts/Satoshi-Black.otf") format("opentype");
@@ -32,7 +30,6 @@
       font-style: normal;
       font-display: swap;
     }
-
     @font-face {
       font-family: "Fraunces";
       src: url("fonts/Fraunces_72pt-Italic.ttf") format("truetype");
@@ -40,7 +37,6 @@
       font-style: italic;
       font-display: swap;
     }
-
     @font-face {
       font-family: "Recoleta";
       src: url("fonts/Recoleta-Regular.woff2") format("woff2");
@@ -63,12 +59,11 @@
       --radius-xl: 28px;
       --radius-lg: 20px;
       --radius-md: 14px;
-      --max: 1260px;
+      --max: 1240px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
       font-family: "Satoshi", Arial, sans-serif;
@@ -78,14 +73,12 @@
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
-
     h1, h2, h3, h4 {
       margin: 0;
       font-family: "Satoshi", Arial, sans-serif;
       letter-spacing: -0.02em;
       color: var(--green-deep);
     }
-
     p { margin: 0; }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
@@ -96,7 +89,7 @@
     }
 
     .section {
-      padding: 52px 0;
+      padding: 48px 0;
     }
 
     .section-head {
@@ -184,17 +177,13 @@
       color: var(--white);
       box-shadow: var(--shadow);
     }
-
     .btn-primary:hover { transform: translateY(-1px); }
-
     .btn-secondary {
       background: transparent;
       color: var(--green-deep);
       border-color: var(--line-strong);
     }
-
     .btn-secondary:hover { background: rgba(11, 139, 76, 0.05); }
-
     .btn-tertiary {
       background: rgba(255,255,255,0.75);
       color: var(--charcoal);
@@ -202,13 +191,13 @@
     }
 
     .hero {
-      padding: 68px 0 42px;
+      padding: 40px 0 30px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
-      gap: 56px;
+      grid-template-columns: minmax(280px, 40%) minmax(0, 60%);
+      gap: 40px;
       align-items: center;
     }
 
@@ -223,23 +212,26 @@
     .hero-logo-wrap {
       display: grid;
       place-items: center;
-      min-height: 340px;
-      padding: 24px;
-      width: 100%;
+      min-height: 260px;
+      padding: 18px;
     }
 
     .hero-logo {
-      width: min(100%, 340px);
+      width: min(100%, 300px);
       height: auto;
       object-fit: contain;
     }
 
+    .hero-copy-block {
+      max-width: 680px;
+    }
+
     .hero h1 {
       font-weight: 900;
-      font-size: clamp(3rem, 5.4vw, 4.8rem);
-      line-height: 0.96;
-      margin-bottom: 18px;
-      max-width: 12ch;
+      font-size: clamp(2.7rem, 5.1vw, 4.6rem);
+      line-height: 0.95;
+      margin-bottom: 16px;
+      max-width: 10.5ch;
     }
 
     .hero-lead {
@@ -253,7 +245,7 @@
     .hero-copy {
       display: grid;
       gap: 12px;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
       color: #415045;
       max-width: 40rem;
     }
@@ -309,7 +301,7 @@
     }
 
     .signature-card h3 {
-      font-size: 1.6rem;
+      font-size: 1.55rem;
       margin-bottom: 8px;
       position: relative;
       z-index: 2;
@@ -378,10 +370,6 @@
 
     .why-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .why-card {
-      position: relative;
     }
 
     .why-card h3 { margin-bottom: 8px; }
@@ -457,6 +445,13 @@
       gap: 14px;
     }
 
+    .form-error {
+      font-size: 0.86rem;
+      color: #9b1c1c;
+      display: none;
+      margin-top: -4px;
+    }
+
     label {
       display: grid;
       gap: 8px;
@@ -479,6 +474,11 @@
     input:focus, select:focus, textarea:focus {
       border-color: rgba(11,139,76,0.34);
       box-shadow: 0 0 0 3px rgba(11,139,76,0.07);
+    }
+
+    input.invalid, select.invalid, textarea.invalid {
+      border-color: rgba(155, 28, 28, 0.55);
+      box-shadow: 0 0 0 3px rgba(155, 28, 28, 0.06);
     }
 
     textarea { min-height: 120px; resize: vertical; }
@@ -534,7 +534,6 @@
     @media (max-width: 1120px) {
       .container { width: min(calc(100% - 64px), var(--max)); }
 
-      .hero-grid,
       .signature-grid,
       .categories-grid,
       .why-grid,
@@ -543,6 +542,11 @@
       .contact-grid,
       .footer-grid {
         grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(240px, 36%) minmax(0, 64%);
+        gap: 28px;
       }
 
       .contact-grid > :first-child,
@@ -558,7 +562,7 @@
     @media (max-width: 760px) {
       .container { width: min(calc(100% - 44px), var(--max)); }
       .nav-links a:not(.btn) { display: none; }
-      .hero { padding-top: 42px; }
+      .hero { padding-top: 34px; }
 
       .hero-grid,
       .signature-grid,
@@ -573,16 +577,16 @@
       }
 
       .hero-logo-wrap {
-        min-height: 250px;
+        min-height: 220px;
         order: 1;
       }
 
-      .hero-grid > div:last-child {
+      .hero-copy-block {
         order: 2;
       }
 
       .hero h1 {
-        font-size: 3.2rem;
+        font-size: 3rem;
         max-width: none;
       }
 
@@ -621,7 +625,7 @@
           <img class="hero-logo" src="logo-placeholder.png" alt="Keri Crafts brand mark" onerror="this.outerHTML='<div style=\"font-size:5rem;font-weight:700;color:#0b8b4c;font-family:Recoleta,Georgia,serif;\">K</div>'" />
         </div>
 
-        <div>
+        <div class="hero-copy-block">
           <h1>Gujarati craft, shared with care.</h1>
           <p class="hero-lead">Keri Crafts is a Gujarati craft food brand shaped by seasonal batches, thoughtful making, and a more personal way to order.</p>
           <div class="hero-copy">
@@ -668,7 +672,6 @@
               <li><strong>Availability:</strong> Available on request</li>
             </ul>
           </article>
-
           <article class="card signature-card">
             <h3>Keri Murabbo</h3>
             <p>Soft keri pieces prepared in a gentler, sweeter profile with a thoughtful festive character.</p>
@@ -677,7 +680,22 @@
               <li><strong>Availability:</strong> Made in limited quantities</li>
             </ul>
           </article>
-
+          <article class="card signature-card">
+            <h3>Katki Keri</h3>
+            <p>Chunk-cut keri gently cooked into a sweet, spiced preparation with a rich bite.</p>
+            <ul class="signature-meta">
+              <li><strong>Format:</strong> Small batch</li>
+              <li><strong>Availability:</strong> Available on request</li>
+            </ul>
+          </article>
+          <article class="card signature-card">
+            <h3>God Keri</h3>
+            <p>Chunk-cut keri tossed in a robust masala, delivering texture, heat, and sharpness.</p>
+            <ul class="signature-meta">
+              <li><strong>Format:</strong> Small batch</li>
+              <li><strong>Availability:</strong> Available on request</li>
+            </ul>
+          </article>
           <article class="card signature-card">
             <h3>Vaghariyu</h3>
             <p>A bold keri preparation with a distinctive vaghar-led character and a deeply rooted flavour profile.</p>
@@ -686,16 +704,14 @@
               <li><strong>Availability:</strong> Subject to batch availability</li>
             </ul>
           </article>
-
           <article class="card signature-card">
-            <h3>Katki Keri</h3>
-            <p>A textured keri preparation with depth, character, and a crafted feel that stands apart.</p>
+            <h3>Amba Hardar</h3>
+            <p>Keri pickle with haldi-led warmth, bringing earthy depth and traditional character.</p>
             <ul class="signature-meta">
               <li><strong>Format:</strong> Small batch</li>
-              <li><strong>Availability:</strong> Available on request</li>
+              <li><strong>Availability:</strong> Subject to batch availability</li>
             </ul>
           </article>
-
           <article class="card signature-card">
             <h3>Khatta Athanu</h3>
             <p>A sharper, tangier keri offering with a lively flavour profile and a more pronounced edge.</p>
@@ -725,14 +741,12 @@
               <li>God Keri</li>
             </ul>
           </article>
-
           <article class="card category-card">
             <h3>Spiced Preparations</h3>
             <ul class="category-list">
               <li>Vaghariyu</li>
             </ul>
           </article>
-
           <article class="card category-card">
             <h3>Tangy Pickles</h3>
             <ul class="category-list">
@@ -751,13 +765,11 @@
             <span class="kicker">Gifting and Custom Orders</span>
             <h2>Selected offerings are also available for festive gifting, curated requests, and custom inquiries depending on batch schedule and availability.</h2>
           </div>
-
           <ul class="gifting-points">
             <li>Festive gifting</li>
             <li>Curated selections</li>
             <li>Custom inquiries</li>
           </ul>
-
           <div style="margin-top:20px;">
             <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20place%20an%20order.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0ASize%3A%0AQuantity%3A" target="_blank" rel="noopener">Ask on WhatsApp</a>
           </div>
@@ -850,27 +862,31 @@
         <div class="faq-grid">
           <article class="card faq-item">
             <h3>How do I place an order?</h3>
-            <p>You can message us on WhatsApp and we’ll guide you through current availability and the ordering process.</p>
+            <p>You can message us on WhatsApp and we’ll guide you through current availability, quantities, and the ordering process directly.</p>
           </article>
           <article class="card faq-item">
-            <h3>How do I know what is available?</h3>
-            <p>The easiest way is to message us on WhatsApp or check Instagram for updates.</p>
+            <h3>How do I know what is currently available?</h3>
+            <p>Our offerings may vary by batch and season. The easiest way to know what is currently available is to message us on WhatsApp or check Instagram for updates.</p>
           </article>
           <article class="card faq-item">
-            <h3>Do you take custom or gifting orders?</h3>
-            <p>Yes, depending on availability and order requirements. Please contact us directly for details.</p>
+            <h3>Do you take gifting or custom orders?</h3>
+            <p>Yes. Selected gifting and custom requests may be possible depending on availability, batch timing, and order requirements.</p>
           </article>
           <article class="card faq-item">
-            <h3>Do you deliver outside the city?</h3>
-            <p>Delivery availability can vary. Contact us with your location and we’ll let you know what is possible.</p>
+            <h3>Are you based in Mumbai?</h3>
+            <p>Yes, Keri Crafts is based in Mumbai. Please message us directly for local orders, gifting requests, or delivery-related queries.</p>
+          </article>
+          <article class="card faq-item">
+            <h3>Do you deliver outside Mumbai?</h3>
+            <p>Delivery availability may vary depending on the order and location. Message us with your city and we’ll let you know what is possible.</p>
           </article>
           <article class="card faq-item">
             <h3>Are all offerings available at all times?</h3>
-            <p>No. Many offerings are made in small batches or on request, so availability may vary.</p>
+            <p>No. Many offerings are made in small batches or on request, so availability may change with the batch and the season.</p>
           </article>
           <article class="card faq-item">
             <h3>Can I contact you on Instagram instead?</h3>
-            <p>Yes. Instagram is good for discovery and updates, while WhatsApp is the fastest route for ordering.</p>
+            <p>Yes. Instagram is good for discovery and updates, while WhatsApp is the fastest and most direct route for ordering.</p>
           </article>
         </div>
       </div>
@@ -893,36 +909,37 @@
 
         <article class="card inquiry-panel" id="inquiry">
           <h3>Send an Inquiry</h3>
-          <form class="inquiry-form" action="#" method="post">
+          <form class="inquiry-form" id="inquiryForm" novalidate>
             <div class="form-grid">
               <label>Name
-                <input type="text" name="name" placeholder="Your name" />
+                <input type="text" name="name" id="name" placeholder="Your name" />
               </label>
               <label>Phone Number
-                <input type="tel" name="phone" placeholder="Your phone number" />
+                <input type="tel" name="phone" id="phone" placeholder="Your phone number" />
               </label>
             </div>
             <div class="form-grid">
               <label>Email
-                <input type="email" name="email" placeholder="Your email" />
+                <input type="email" name="email" id="email" placeholder="Your email" />
               </label>
               <label>City
-                <input type="text" name="city" placeholder="Your city" />
+                <input type="text" name="city" id="city" placeholder="Your city" />
               </label>
             </div>
             <div class="form-grid">
               <label>Type of Inquiry
-                <select name="type">
-                  <option>Personal order</option>
-                  <option>Gifting inquiry</option>
-                  <option>Custom order</option>
-                  <option>General inquiry</option>
+                <select name="type" id="type">
+                  <option value="Personal order">Personal order</option>
+                  <option value="Gifting inquiry">Gifting inquiry</option>
+                  <option value="Custom order">Custom order</option>
+                  <option value="General inquiry">General inquiry</option>
                 </select>
               </label>
             </div>
             <label>Message
-              <textarea name="message" placeholder="Tell us what you are interested in."></textarea>
+              <textarea name="message" id="message" placeholder="Tell us what you are interested in."></textarea>
             </label>
+            <p class="form-error" id="formError">Please fill in Name, Phone Number, and Message. Add a valid email if you enter one.</p>
             <button class="btn btn-primary" type="submit">Send Inquiry</button>
             <p class="form-note">For the fastest response, please message us directly on WhatsApp.</p>
           </form>
@@ -951,5 +968,69 @@
   <div class="sticky-cta">
     <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20place%20an%20order.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0ASize%3A%0AQuantity%3A" target="_blank" rel="noopener">Order on WhatsApp</a>
   </div>
+
+  <script>
+    (function () {
+      const form = document.getElementById('inquiryForm');
+      if (!form) return;
+
+      const fields = {
+        name: document.getElementById('name'),
+        phone: document.getElementById('phone'),
+        email: document.getElementById('email'),
+        city: document.getElementById('city'),
+        type: document.getElementById('type'),
+        message: document.getElementById('message')
+      };
+      const error = document.getElementById('formError');
+
+      const emailValid = (value) => !value || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const values = Object.fromEntries(
+          Object.entries(fields).map(([key, el]) => [key, (el.value || '').trim()])
+        );
+
+        Object.values(fields).forEach((el) => el.classList.remove('invalid'));
+        error.style.display = 'none';
+
+        let hasError = false;
+        if (!values.name) {
+          fields.name.classList.add('invalid');
+          hasError = true;
+        }
+        if (!values.phone) {
+          fields.phone.classList.add('invalid');
+          hasError = true;
+        }
+        if (!values.message) {
+          fields.message.classList.add('invalid');
+          hasError = true;
+        }
+        if (!emailValid(values.email)) {
+          fields.email.classList.add('invalid');
+          hasError = true;
+        }
+
+        if (hasError) {
+          error.style.display = 'block';
+          return;
+        }
+
+        const whatsappMessage = `Hi, I’d like to send an inquiry to Keri Crafts.
+
+Name: ${values.name}
+Phone Number: ${values.phone}
+Email: ${values.email}
+City: ${values.city}
+Type of Inquiry: ${values.type}
+Message: ${values.message}`;
+        const url = `https://wa.me/919223381903?text=${encodeURIComponent(whatsappMessage)}`;
+        window.open(url, '_blank');
+      });
+    })();
+  </script>
 </body>
 </html>
