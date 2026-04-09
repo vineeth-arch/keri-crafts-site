@@ -313,12 +313,19 @@
 
     .signature-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
-    .signature-card {
+    .sig-card {
+      background: rgba(255,255,255,0.85);
+      border: 1px solid rgba(11,139,76,0.1);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 28px 28px 24px;
+      display: flex;
+      flex-direction: column;
       position: relative;
       overflow: hidden;
     }
 
-    .signature-card::after {
+    .sig-card::after {
       content: "";
       position: absolute;
       right: -18px;
@@ -330,23 +337,92 @@
       background: rgba(166,212,102,0.14);
     }
 
-    .signature-card h3 {
+    .sig-card h3 {
       font-size: 1.55rem;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       position: relative;
       z-index: 2;
     }
 
-    .signature-card p {
+    .sig-desc {
       font-family: "Fraunces", Georgia, serif;
       font-style: italic;
       color: #405043;
-      margin-bottom: 12px;
+      font-size: 0.97rem;
+      line-height: 1.55;
+      margin: 0;
       position: relative;
       z-index: 2;
     }
 
-    .signature-meta,
+    .sig-divider {
+      height: 1px;
+      background: linear-gradient(90deg, rgba(11,139,76,0.15), rgba(11,139,76,0.02));
+      margin: 16px 0;
+      border: none;
+      position: relative;
+      z-index: 2;
+    }
+
+    .sig-meta {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+      position: relative;
+      z-index: 2;
+    }
+
+    .sig-meta li {
+      color: #435145;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .sig-meta strong {
+      color: var(--charcoal);
+      font-weight: 600;
+    }
+
+    .sig-cta {
+      display: block;
+      width: 100%;
+      margin-top: 22px;
+      padding: 13px 18px;
+      border-radius: 12px;
+      border: none;
+      text-align: center;
+      color: #ffffff;
+      background: var(--green-deep);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      position: relative;
+      z-index: 3;
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.15) inset,
+        0 -1px 0 rgba(0,0,0,0.1) inset,
+        0 5px 16px rgba(11,139,76,0.28),
+        0 2px 5px rgba(11,139,76,0.14);
+      transition: all 160ms ease;
+    }
+
+    .sig-cta:hover {
+      background: #13a85e;
+      transform: translateY(1px);
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.1) inset,
+        0 2px 8px rgba(11,139,76,0.14);
+    }
+
+    .sig-cta:active {
+      transform: translateY(2px);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1) inset;
+    }
+
     .category-list,
     .gifting-points {
       list-style: none;
@@ -356,7 +432,6 @@
       gap: 10px;
     }
 
-    .signature-meta li,
     .category-list li,
     .gifting-points li {
       color: #435145;
@@ -364,8 +439,6 @@
       position: relative;
       z-index: 2;
     }
-
-    .signature-meta strong { color: var(--charcoal); }
 
     .categories-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
@@ -630,7 +703,27 @@
 
     @media (max-width: 760px) {
       .container { width: min(calc(100% - 44px), var(--max)); }
+
+      .nav-inner {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 0;
+      }
+
+      .nav-logo {
+        height: 54px;
+        width: auto;
+        max-width: none;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+      }
+
       .nav-links a:not(.btn) { display: none; }
+
       .hero { padding-top: 34px; }
 
       .hero-grid {
@@ -853,6 +946,95 @@
       </div>
     </section>
 
+    <section class="section" id="signature">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Signature Offerings</span>
+          <h2>A closer look at what Keri Crafts offers.</h2>
+          <p>Our offerings are made in limited quantities and may vary by batch and season. We are currently open for pre-orders for Batch KC—01. Message us to know what is available in this batch.</p>
+        </div>
+
+        <div class="signature-grid">
+          <article class="sig-card">
+            <h3>Keri Chundo</h3>
+            <p class="sig-desc">Sweet-spiced grated keri, slow-made to a rich and glossy finish with a familiar Gujarati warmth.</p>
+            <hr class="sig-divider">
+            <ul class="sig-meta">
+              <li><strong>Taste profile:</strong> Sweet, gently spiced, and rounded with a lingering warmth.</li>
+              <li><strong>Best enjoyed with:</strong> Thepla, paratha, khakhra, or even a simple spoonful on the side.</li>
+            </ul>
+            <a class="sig-cta wa-dynamic" data-product-names="Keri Chundo" href="#" target="_blank" rel="noopener">Pre-order Keri Chundo</a>
+          </article>
+
+          <article class="sig-card">
+            <h3>Keri Murabbo</h3>
+            <p class="sig-desc">Soft keri pieces prepared in a gentler, sweeter profile with a thoughtful festive character.</p>
+            <hr class="sig-divider">
+            <ul class="sig-meta">
+              <li><strong>Taste profile:</strong> Soft, mellow, and sweet with a delicate spiced depth.</li>
+              <li><strong>Best enjoyed with:</strong> Rotis, festive meals, or as a sweeter accompaniment at the table.</li>
+            </ul>
+            <a class="sig-cta wa-dynamic" data-product-names="Keri Murabbo" href="#" target="_blank" rel="noopener">Pre-order Keri Murabbo</a>
+          </article>
+
+          <article class="sig-card">
+            <h3>Katki Keri</h3>
+            <p class="sig-desc">Chunk-cut keri gently cooked into a sweet, spiced preparation with a rich bite.</p>
+            <hr class="sig-divider">
+            <ul class="sig-meta">
+              <li><strong>Taste profile:</strong> Textured, sweet-spiced, and fuller in bite and character.</li>
+              <li><strong>Best enjoyed with:</strong> Thepla, phulka, or alongside everyday Gujarati meals.</li>
+            </ul>
+            <a class="sig-cta wa-dynamic" data-product-names="Katki Keri" href="#" target="_blank" rel="noopener">Pre-order Katki Keri</a>
+          </article>
+
+          <article class="sig-card">
+            <h3>God Keri</h3>
+            <p class="sig-desc">Chunk-cut keri tossed in a robust masala, delivering texture, heat, and sharpness.</p>
+            <hr class="sig-divider">
+            <ul class="sig-meta">
+              <li><strong>Taste profile:</strong> Bold, masaledar, and lively with a sharper finish.</li>
+              <li><strong>Best enjoyed with:</strong> Dal-rice, paratha, curd rice, or comfort meals that need a punch.</li>
+            </ul>
+            <a class="sig-cta wa-dynamic" data-product-names="God Keri" href="#" target="_blank" rel="noopener">Pre-order God Keri</a>
+          </article>
+
+          <article class="sig-card">
+            <h3>Vaghariyu</h3>
+            <p class="sig-desc">A bold keri preparation with a distinctive vaghar-led character and a deeply rooted flavour profile.</p>
+            <hr class="sig-divider">
+            <ul class="sig-meta">
+              <li><strong>Taste profile:</strong> Tempered, savoury, and spice-forward with deep Gujarati character.</li>
+              <li><strong>Best enjoyed with:</strong> Thepla, rotli, khichdi, or traditional home-style meals.</li>
+            </ul>
+            <a class="sig-cta wa-dynamic" data-product-names="Vaghariyu" href="#" target="_blank" rel="noopener">Pre-order Vaghariyu</a>
+          </article>
+
+          <article class="sig-card">
+            <h3>Amba Hardar</h3>
+            <p class="sig-desc">Keri pickle with haldi-led warmth, bringing earthy depth and traditional character.</p>
+            <hr class="sig-divider">
+            <ul class="sig-meta">
+              <li><strong>Taste profile:</strong> Earthy, warm, and grounded with haldi-led depth.</li>
+              <li><strong>Best enjoyed with:</strong> Rotli-shaak, dal-chawal, curd rice, or simple home meals.</li>
+            </ul>
+            <a class="sig-cta wa-dynamic" data-product-names="Amba Hardar" href="#" target="_blank" rel="noopener">Pre-order Amba Hardar</a>
+          </article>
+
+          <article class="sig-card">
+            <h3>Khatta Athanu</h3>
+            <p class="sig-desc">A sharper, tangier keri offering with a lively flavour profile and a more pronounced edge.</p>
+            <hr class="sig-divider">
+            <ul class="sig-meta">
+              <li><strong>Taste profile:</strong> Tangy, punchy, and bright with a lively finish.</li>
+              <li><strong>Best enjoyed with:</strong> Thepla, paratha, khichdi, or whenever a meal needs an instant lift.</li>
+            </ul>
+            <a class="sig-cta wa-dynamic" data-product-names="Khatta Athanu" href="#" target="_blank" rel="noopener">Pre-order Khatta Athanu</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="about">
       <div class="container">
         <div class="section-head">
@@ -878,82 +1060,6 @@
             <p>Message us on WhatsApp to know what is included in KC—01 and to place your order.</p>
           </div>
           <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC—01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="signature">
-      <div class="container">
-        <div class="section-head">
-          <span class="kicker">Signature Offerings</span>
-          <h2>A closer look at what Keri Crafts offers.</h2>
-          <p>Our offerings are made in limited quantities and may vary by batch and season. We are currently open for pre-orders for Batch KC—01. Message us to know what is available in this batch.</p>
-        </div>
-
-        <div class="signature-grid">
-          <article class="card signature-card">
-            <h3>Keri Chundo</h3>
-            <p>Sweet-spiced grated keri, slow-made to a rich and glossy finish with a familiar Gujarati warmth.</p>
-            <ul class="signature-meta">
-              <li><strong>Taste profile:</strong> Sweet, gently spiced, and rounded with a lingering warmth.</li>
-              <li><strong>Best enjoyed with:</strong> Thepla, paratha, khakhra, or even a simple spoonful on the side.</li>
-            </ul>
-            <a class="mini-wa wa-dynamic" data-product-names="Keri Chundo" href="#" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
-          </article>
-          <article class="card signature-card">
-            <h3>Keri Murabbo</h3>
-            <p>Soft keri pieces prepared in a gentler, sweeter profile with a thoughtful festive character.</p>
-            <ul class="signature-meta">
-              <li><strong>Taste profile:</strong> Soft, mellow, and sweet with a delicate spiced depth.</li>
-              <li><strong>Best enjoyed with:</strong> Rotis, festive meals, or as a sweeter accompaniment at the table.</li>
-            </ul>
-            <a class="mini-wa wa-dynamic" data-product-names="Keri Murabbo" href="#" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
-          </article>
-          <article class="card signature-card">
-            <h3>Katki Keri</h3>
-            <p>Chunk-cut keri gently cooked into a sweet, spiced preparation with a rich bite.</p>
-            <ul class="signature-meta">
-              <li><strong>Taste profile:</strong> Textured, sweet-spiced, and fuller in bite and character.</li>
-              <li><strong>Best enjoyed with:</strong> Thepla, phulka, or alongside everyday Gujarati meals.</li>
-            </ul>
-            <a class="mini-wa wa-dynamic" data-product-names="Katki Keri" href="#" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
-          </article>
-          <article class="card signature-card">
-            <h3>God Keri</h3>
-            <p>Chunk-cut keri tossed in a robust masala, delivering texture, heat, and sharpness.</p>
-            <ul class="signature-meta">
-              <li><strong>Taste profile:</strong> Bold, masaledar, and lively with a sharper finish.</li>
-              <li><strong>Best enjoyed with:</strong> Dal-rice, paratha, curd rice, or comfort meals that need a punch.</li>
-            </ul>
-            <a class="mini-wa wa-dynamic" data-product-names="God Keri" href="#" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
-          </article>
-          <article class="card signature-card">
-            <h3>Vaghariyu</h3>
-            <p>A bold keri preparation with a distinctive vaghar-led character and a deeply rooted flavour profile.</p>
-            <ul class="signature-meta">
-              <li><strong>Taste profile:</strong> Tempered, savoury, and spice-forward with deep Gujarati character.</li>
-              <li><strong>Best enjoyed with:</strong> Thepla, rotli, khichdi, or traditional home-style meals.</li>
-            </ul>
-            <a class="mini-wa wa-dynamic" data-product-names="Vaghariyu" href="#" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
-          </article>
-          <article class="card signature-card">
-            <h3>Amba Hardar</h3>
-            <p>Keri pickle with haldi-led warmth, bringing earthy depth and traditional character.</p>
-            <ul class="signature-meta">
-              <li><strong>Taste profile:</strong> Earthy, warm, and grounded with haldi-led depth.</li>
-              <li><strong>Best enjoyed with:</strong> Rotli-shaak, dal-chawal, curd rice, or simple home meals.</li>
-            </ul>
-            <a class="mini-wa wa-dynamic" data-product-names="Amba Hardar" href="#" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
-          </article>
-          <article class="card signature-card">
-            <h3>Khatta Athanu</h3>
-            <p>A sharper, tangier keri offering with a lively flavour profile and a more pronounced edge.</p>
-            <ul class="signature-meta">
-              <li><strong>Taste profile:</strong> Tangy, punchy, and bright with a lively finish.</li>
-              <li><strong>Best enjoyed with:</strong> Thepla, paratha, khichdi, or whenever a meal needs an instant lift.</li>
-            </ul>
-            <a class="mini-wa wa-dynamic" data-product-names="Khatta Athanu" href="#" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
-          </article>
         </div>
       </div>
     </section>
@@ -1300,4 +1406,15 @@
 
 Thoughtful Gujarati flavours, made in small batches and shared with care.
 
-We’re currently taking pre-orders for Ba
+We’re currently taking pre-orders for Batch KC01 and would love to help you choose something for your table or for gifting.
+
+
+
+"
+    data-accent-color="#25D366"
+    data-title="Keri Crafts | Batch KC01"
+    data-subtitle="Warm Gujarati flavours • Based in Mumbai"
+    data-placeholder="Are you craving something sweet, tangy, or boldly spiced?"
+  ></script>
+</body>
+</html>
