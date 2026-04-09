@@ -1308,10 +1308,10 @@
               </label>
             </div>
             <label>Message
-              <textarea name="message" id="message" placeholder="Kem cho. Welcome to Keri Crafts.&#10;&#10;Rooted in Gujarati flavour and made in small batches, our current offerings are being shared through Batch KC—01.&#10;Message us to know what’s available."></textarea>
+              <textarea name="message" id="message" placeholder="Your message or inquiry..."></textarea>
             </label>
-            <p class="form-error" id="formError">Please fill in Name, Phone Number, and Message.</p>
-            <button class="btn btn-primary" type="submit">Send Inquiry</button>
+            <p class="form-error" id="formError">Please fill in your Name and Phone Number.</p>
+            <button class="btn btn-primary" type="button" id="sendInquiryBtn">Send Inquiry</button>
             <p class="form-note">For the quickest response, you can also message us directly on WhatsApp.</p>
           </form>
         </article>
@@ -1344,42 +1344,54 @@
 
   <script>
     (function () {
-      const form = document.getElementById(‘inquiryForm’);
-      if (!form) return;
+      const btn = document.getElementById(‘sendInquiryBtn’);
+      if (!btn) return;
 
       const error = document.getElementById(‘formError’);
       const fields = {
-        name: document.getElementById(‘name’),
-        phone: document.getElementById(‘phone’),
-        email: document.getElementById(‘email’),
-        city: document.getElementById(‘city’),
-        type: document.getElementById(‘type’),
+        name:    document.getElementById(‘name’),
+        phone:   document.getElementById(‘phone’),
+        email:   document.getElementById(‘email’),
+        city:    document.getElementById(‘city’),
+        type:    document.getElementById(‘type’),
         message: document.getElementById(‘message’)
       };
 
-      form.addEventListener(‘submit’, function (event) {
-        event.preventDefault();
-
-        const values = Object.fromEntries(
-          Object.entries(fields).map(([key, el]) => [key, el ? (el.value || ‘’).trim() : ‘’])
-        );
+      btn.addEventListener(‘click’, function () {
+        const values = {};
+        Object.entries(fields).forEach(function (pair) {
+          values[pair[0]] = pair[1] ? (pair[1].value || ‘’).trim() : ‘’;
+        });
 
         Object.values(fields).forEach(function (el) { if (el) el.classList.remove(‘invalid’); });
         if (error) error.style.display = ‘none’;
 
-        let hasError = false;
-        if (!values.name)    { fields.name.classList.add(‘invalid’);    hasError = true; }
-        if (!values.phone)   { fields.phone.classList.add(‘invalid’);   hasError = true; }
-        if (!values.message) { fields.message.classList.add(‘invalid’); hasError = true; }
+        var hasError = false;
+        if (!values.name)  { fields.name.classList.add(‘invalid’);  hasError = true; }
+        if (!values.phone) { fields.phone.classList.add(‘invalid’); hasError = true; }
 
         if (hasError) {
           if (error) error.style.display = ‘block’;
           return;
         }
 
-        const emailLine = values.email ? `\nEmail: ${values.email}` : ‘’;
-        const whatsappMessage = `Hi, I\u2019d like to send an inquiry to Keri Crafts regarding Batch KC\u201401.\n\nName: ${values.name}\nPhone Number: ${values.phone}${emailLine}\nCity: ${values.city}\nType of Inquiry: ${values.type}\nMessage: ${values.message}`;
-        window.open(`https://wa.me/919223381903?text=${encodeURIComponent(whatsappMessage)}`, ‘_blank’);
+        var emailLine = values.email ? (‘\nEmail: ‘ + values.email) : ‘’;
+        var msgLine   = values.message ? (‘\nMessage: ‘ + values.message) : ‘’;
+        var waMsg = ‘Hi, I\u2019d like to send an inquiry to Keri Crafts regarding Batch KC\u201401.’
+          + ‘\n\nName: ‘            + values.name
+          + ‘\nPhone Number: ‘      + values.phone
+          + emailLine
+          + ‘\nCity: ‘             + values.city
+          + ‘\nType of Inquiry: ‘  + values.type
+          + msgLine;
+
+        var a = document.createElement(‘a’);
+        a.href = ‘https://wa.me/919223381903?text=’ + encodeURIComponent(waMsg);
+        a.target = ‘_blank’;
+        a.rel = ‘noopener’;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
       });
     })();
   </script>
