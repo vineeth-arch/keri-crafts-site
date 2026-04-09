@@ -950,9 +950,6 @@
               </label>
             </div>
             <div class="form-grid">
-              <label>Email
-                <input type="email" name="email" id="email" placeholder="Your email" />
-              </label>
               <label>City
                 <input type="text" name="city" id="city" placeholder="Your city" />
               </label>
@@ -970,7 +967,7 @@
             <label>Message
               <textarea name="message" id="message" placeholder="Tell us what you are interested in."></textarea>
             </label>
-            <p class="form-error" id="formError">Please fill in Name, Phone Number, and Message. Add a valid email if you enter one.</p>
+            <p class="form-error" id="formError">Please fill in Name, Phone Number, and Message.</p>
             <button class="btn btn-primary" type="submit">Send Inquiry</button>
             <p class="form-note">For the fastest response, please message us directly on WhatsApp.</p>
           </form>
@@ -1008,13 +1005,11 @@
       const fields = {
         name: document.getElementById('name'),
         phone: document.getElementById('phone'),
-        email: document.getElementById('email'),
         city: document.getElementById('city'),
         type: document.getElementById('type'),
         message: document.getElementById('message')
       };
       const error = document.getElementById('formError');
-      const emailValid = (value) => !value || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
       form.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -1029,7 +1024,6 @@
         if (!values.name) { fields.name.classList.add('invalid'); hasError = true; }
         if (!values.phone) { fields.phone.classList.add('invalid'); hasError = true; }
         if (!values.message) { fields.message.classList.add('invalid'); hasError = true; }
-        if (!emailValid(values.email)) { fields.email.classList.add('invalid'); hasError = true; }
 
         if (hasError) {
           error.style.display = 'block';
@@ -1040,7 +1034,6 @@
 
 Name: ${values.name}
 Phone Number: ${values.phone}
-Email: ${values.email}
 City: ${values.city}
 Type of Inquiry: ${values.type}
 Message: ${values.message}`;
