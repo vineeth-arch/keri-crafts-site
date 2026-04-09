@@ -379,18 +379,31 @@
       margin-bottom: 10px;
     }
 
-    .gifting-card { max-width: 920px; margin: 0 auto; }
-
-    .gifting-points {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
+    .gifting-head {
+      max-width: 680px;
+      margin-bottom: 28px;
     }
 
-    .gifting-points li {
-      padding: 12px 14px;
-      border: 1px solid rgba(11,139,76,0.1);
-      border-radius: 14px;
-      background: rgba(255,255,255,0.72);
+    .gifting-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .gifting-item {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gifting-item h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .gifting-item p {
+      color: #405043;
+      font-size: 0.96rem;
+      line-height: 1.65;
     }
 
     .why-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -612,7 +625,7 @@
         grid-column: 1 / -1;
       }
 
-      .gifting-points { grid-template-columns: 1fr; }
+      .gifting-grid { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 760px) {
@@ -633,7 +646,7 @@
       .contact-grid,
       .footer-grid,
       .form-grid,
-      .gifting-points {
+      .gifting-grid {
         grid-template-columns: 1fr;
       }
 
@@ -656,62 +669,7 @@
       .section-head,
       .body-card,
       .batch-block,
-      .gifting-card,
-      .footer-brand {
-        max-width: none;
-      }
-
-      .card,
-      .step-card {
-        padding: 22px;
-      }
-
-      .footer-grid {
-        gap: 16px;
-      }
-
-      .footer-links {
-        justify-content: flex-start;
-      }
-
-      .footer { padding-bottom: 104px; }
-      .sticky-cta { display: block; }
-    }1fr;
-        gap: 20px;
-      }
-
-      .signature-grid,
-      .categories-grid,
-      .why-grid,
-      .steps-grid,
-      .faq-grid,
-      .contact-grid,
-      .footer-grid,
-      .form-grid,
-      .gifting-points {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-logo-wrap {
-        min-height: 220px;
-        order: 1;
-      }
-
-      .hero-copy-block {
-        order: 2;
-      }
-
-      .hero h1 {
-        font-size: 2.3rem;
-        max-width: 12ch;
-      }
-
-      .hero-lead,
-      .hero-copy,
-      .section-head,
-      .body-card,
-      .batch-block,
-      .gifting-card,
+      .gifting-head,
       .footer-brand {
         max-width: none;
       }
@@ -737,22 +695,114 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      margin-top: 16px;
-      padding: 9px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(11, 139, 76, 0.16);
-      color: var(--green-deep);
-      background: rgba(255,255,255,0.78);
-      font-size: 0.9rem;
-      font-weight: 600;
+      margin-top: 20px;
+      padding: 11px 22px;
+      border-radius: 10px;
+      border: 1px solid rgba(11, 139, 76, 0.28);
+      color: #ffffff;
+      background: var(--green-deep);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.025em;
       position: relative;
       z-index: 3;
-      transition: 180ms ease;
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.15) inset,
+        0 -1px 0 rgba(0,0,0,0.12) inset,
+        0 6px 18px rgba(11,139,76,0.26),
+        0 2px 5px rgba(11,139,76,0.16);
+      transition: all 180ms ease;
     }
 
     .mini-wa:hover {
-      background: rgba(11, 139, 76, 0.06);
-      transform: translateY(-1px);
+      background: #13a85e;
+      transform: translateY(1px);
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.1) inset,
+        0 2px 8px rgba(11,139,76,0.14),
+        0 1px 2px rgba(11,139,76,0.1);
+    }
+
+    .mini-wa:active {
+      background: #097a42;
+      transform: translateY(2px);
+      box-shadow:
+        0 2px 5px rgba(0,0,0,0.14) inset,
+        0 1px 2px rgba(11,139,76,0.08);
+    }
+
+    .cat-panel {
+      background: rgba(255,255,255,0.85);
+      border: 1px solid rgba(11,139,76,0.1);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 30px 26px 26px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cat-index {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--green-bright);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .cat-title {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin: 0 0 0;
+      letter-spacing: -0.02em;
+    }
+
+    .cat-rule {
+      height: 1px;
+      background: linear-gradient(90deg, rgba(11,139,76,0.18), rgba(11,139,76,0.04));
+      margin: 14px 0;
+      border: none;
+    }
+
+    .cat-desc {
+      font-family: "Fraunces", Georgia, serif;
+      font-style: italic;
+      color: #4a5c4d;
+      font-size: 0.94rem;
+      line-height: 1.55;
+      margin: 0 0 18px;
+    }
+
+    .cat-items {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cat-items li {
+      font-size: 0.93rem;
+      color: #334136;
+      font-weight: 500;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(11,139,76,0.07);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cat-items li:last-child { border-bottom: none; }
+
+    .cat-items li::before {
+      content: "";
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--green-soft);
+      flex-shrink: 0;
     }
   </style>
 </head>
@@ -912,13 +962,16 @@
       <div class="container">
         <div class="section-head">
           <span class="kicker">Current Offering Categories</span>
-          <h2>Our range is grouped by flavour style and offering type. Availability may vary by batch and season.</h2>
+          <h2>Three flavour expressions, one careful batch.</h2>
         </div>
 
         <div class="categories-grid">
-          <article class="card category-card">
-            <h3>Sweet Preserves</h3>
-            <ul class="category-list">
+          <article class="cat-panel">
+            <div class="cat-index">01</div>
+            <h3 class="cat-title">Sweet Preserves</h3>
+            <hr class="cat-rule">
+            <p class="cat-desc">Softer, sweeter keri expressions layered with warmth and richness.</p>
+            <ul class="cat-items">
               <li>Keri Chundo</li>
               <li>Keri Murabbo</li>
               <li>Katki Keri</li>
@@ -926,16 +979,24 @@
             </ul>
             <a class="mini-wa wa-dynamic" data-product-names="Keri Chundo, Keri Murabbo, Katki Keri, God Keri" href="#" target="_blank" rel="noopener">Ask on WhatsApp</a>
           </article>
-          <article class="card category-card">
-            <h3>Spiced Preparations</h3>
-            <ul class="category-list">
+
+          <article class="cat-panel">
+            <div class="cat-index">02</div>
+            <h3 class="cat-title">Spiced Preparations</h3>
+            <hr class="cat-rule">
+            <p class="cat-desc">Bolder, spice-led preparations with depth and Gujarati character.</p>
+            <ul class="cat-items">
               <li>Vaghariyu</li>
             </ul>
             <a class="mini-wa wa-dynamic" data-product-names="Vaghariyu" href="#" target="_blank" rel="noopener">Ask on WhatsApp</a>
           </article>
-          <article class="card category-card">
-            <h3>Tangy Pickles</h3>
-            <ul class="category-list">
+
+          <article class="cat-panel">
+            <div class="cat-index">03</div>
+            <h3 class="cat-title">Tangy Pickles</h3>
+            <hr class="cat-rule">
+            <p class="cat-desc">Sharper, punchier offerings with a lively and lingering finish.</p>
+            <ul class="cat-items">
               <li>Amba Hardar</li>
               <li>Khatta Athanu</li>
             </ul>
@@ -947,19 +1008,31 @@
 
     <section class="section" id="gifting">
       <div class="container">
-        <div class="card gifting-card">
-          <div class="section-head" style="margin-bottom:14px; max-width:none;">
-            <span class="kicker">Gifting and Custom Orders</span>
-            <h2>Selected offerings are also available for festive gifting, curated requests, and custom inquiries depending on batch schedule and availability.</h2>
-          </div>
-          <ul class="gifting-points">
-            <li>Festive gifting</li>
-            <li>Curated selections</li>
-            <li>Custom inquiries</li>
-          </ul>
-          <div style="margin-top:20px;">
-            <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC—01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">Ask about Batch KC—01</a>
-          </div>
+        <div class="section-head gifting-head">
+          <span class="kicker">Gifting and Custom Orders</span>
+          <h2>Thoughtful gifting, curated with care.</h2>
+          <p>Selected Keri Crafts offerings can also be prepared for festive gifting, curated requests, and custom inquiries, depending on batch schedule and availability. If you have something specific in mind, message us and we'll guide you through what is currently possible.</p>
+        </div>
+
+        <div class="gifting-grid">
+          <article class="card gifting-item">
+            <h3>Festive Gifting</h3>
+            <p>Thoughtful Gujarati offerings prepared for festive moments, family sharing, and warm gifting.</p>
+          </article>
+
+          <article class="card gifting-item">
+            <h3>Curated Selections</h3>
+            <p>A more considered way to choose from the current batch, based on flavour, occasion, and availability.</p>
+          </article>
+
+          <article class="card gifting-item">
+            <h3>Custom Requests</h3>
+            <p>If you're looking for something specific, we'll be happy to guide you based on the batch and what can be prepared well.</p>
+          </article>
+        </div>
+
+        <div style="margin-top: 28px;">
+          <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20ask%20about%20gifting%20or%20custom%20requests%20for%20Batch%20KC%E2%80%9401.%0A%0AName%3A%0ACity%3A%20%5BMumbai%5D%0AOccasion%20%2F%20Requirement%3A%0AProduct%20Names%3A%0AQuantity%3A%0AMessage%3A" target="_blank" rel="noopener">Message us for gifting and custom requests</a>
         </div>
       </div>
     </section>
