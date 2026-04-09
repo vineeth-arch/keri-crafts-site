@@ -615,16 +615,123 @@
       .gifting-points { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 760px) {$1.signature-grid,
+    @media (max-width: 760px) {
+      .container { width: min(calc(100% - 44px), var(--max)); }
+      .nav-links a:not(.btn) { display: none; }
+      .hero { padding-top: 34px; }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .signature-grid,
       .categories-grid,
       .why-grid,
       .steps-grid,
       .faq-grid,
       .contact-grid,
       .footer-grid,
-      .form-grid {
+      .form-grid,
+      .gifting-points {
         grid-template-columns: 1fr;
       }
+
+      .hero-logo-wrap {
+        min-height: 220px;
+        order: 1;
+      }
+
+      .hero-copy-block {
+        order: 2;
+      }
+
+      .hero h1 {
+        font-size: 2.3rem;
+        max-width: 12ch;
+      }
+
+      .hero-lead,
+      .hero-copy,
+      .section-head,
+      .body-card,
+      .batch-block,
+      .gifting-card,
+      .footer-brand {
+        max-width: none;
+      }
+
+      .card,
+      .step-card {
+        padding: 22px;
+      }
+
+      .footer-grid {
+        gap: 16px;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+
+      .footer { padding-bottom: 104px; }
+      .sticky-cta { display: block; }
+    }1fr;
+        gap: 20px;
+      }
+
+      .signature-grid,
+      .categories-grid,
+      .why-grid,
+      .steps-grid,
+      .faq-grid,
+      .contact-grid,
+      .footer-grid,
+      .form-grid,
+      .gifting-points {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-logo-wrap {
+        min-height: 220px;
+        order: 1;
+      }
+
+      .hero-copy-block {
+        order: 2;
+      }
+
+      .hero h1 {
+        font-size: 2.3rem;
+        max-width: 12ch;
+      }
+
+      .hero-lead,
+      .hero-copy,
+      .section-head,
+      .body-card,
+      .batch-block,
+      .gifting-card,
+      .footer-brand {
+        max-width: none;
+      }
+
+      .card,
+      .step-card {
+        padding: 22px;
+      }
+
+      .footer-grid {
+        gap: 16px;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+
+      .footer { padding-bottom: 104px; }
+      .sticky-cta { display: block; }
+    }
 
       .hero-logo-wrap {
         min-height: 220px;
@@ -1093,15 +1200,4 @@ Message: ${values.message}`;
 
 Thoughtful Gujarati flavours, made in small batches and shared with care.
 
-We’re currently taking pre-orders for Batch KC—01 and would love to help you choose something for your table or for gifting.
-
-
-
-"
-    data-accent-color="#25D366"
-    data-title="Keri Crafts | Batch KC—01"
-    data-subtitle="Warm Gujarati flavours • Based in Mumbai"
-    data-placeholder="Are you craving something sweet, tangy, or boldly spiced?"
-  ></script>
-</body>
-</html>
+We’re currently taking pre-orders for Ba
