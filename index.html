@@ -88,9 +88,7 @@
       margin: 0 auto;
     }
 
-    .section {
-      padding: 48px 0;
-    }
+    .section { padding: 48px 0; }
 
     .section-head {
       display: grid;
@@ -190,13 +188,23 @@
       border-color: rgba(0,0,0,0.08);
     }
 
-    .hero {
-      padding: 40px 0 30px;
+    .batch-strip {
+      border-bottom: 1px solid rgba(11, 139, 76, 0.08);
+      background: rgba(255,255,255,0.42);
     }
+
+    .batch-strip-inner {
+      padding: 10px 0;
+      color: #425045;
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    .hero { padding: 32px 0 24px; }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(280px, 40%) minmax(0, 60%);
+      grid-template-columns: minmax(200px, 38%) minmax(0, 62%);
       gap: 40px;
       align-items: center;
     }
@@ -222,25 +230,15 @@
       object-fit: contain;
     }
 
-    .hero-copy-block {
-      max-width: 680px;
+    .hero-logo-fallback {
+      font-size: 5rem;
+      font-weight: 700;
+      color: #0b8b4c;
+      font-family: "Recoleta", Georgia, serif;
+      line-height: 1;
     }
 
-    .hero h1 {
-      font-weight: 900;
-      font-size: clamp(2.7rem, 5.1vw, 4.6rem);
-      line-height: 0.95;
-      margin-bottom: 16px;
-      max-width: 10.5ch;
-    }
-
-    .hero-lead {
-      font-size: 1.12rem;
-      max-width: 40rem;
-      color: #37453b;
-      margin-bottom: 14px;
-      font-weight: 400;
-    }
+    .hero-copy-block { max-width: 680px; }
 
     .preorder-badge {
       display: inline-flex;
@@ -256,21 +254,20 @@
       margin-bottom: 14px;
     }
 
-    .batch-strip {
-      border-bottom: 1px solid rgba(11, 139, 76, 0.08);
-      background: rgba(255,255,255,0.42);
+    .hero h1 {
+      font-weight: 900;
+      font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+      line-height: 0.95;
+      margin-bottom: 16px;
+      max-width: 10.5ch;
     }
 
-    .batch-strip-inner {
-      padding: 10px 0;
-      color: #425045;
-      font-size: 0.92rem;
-      text-align: center;
-    }
-
-    .batch-block {
-      max-width: 940px;
-      margin: 0 auto;
+    .hero-lead {
+      font-size: 1.12rem;
+      max-width: 40rem;
+      color: #37453b;
+      margin-bottom: 14px;
+      font-weight: 400;
     }
 
     .hero-copy {
@@ -295,9 +292,8 @@
       color: #5c685d;
     }
 
-    .body-card {
-      max-width: 860px;
-    }
+    .body-card { max-width: 860px; }
+    .batch-block { max-width: 940px; margin: 0 auto; }
 
     .signature-grid,
     .categories-grid,
@@ -310,9 +306,7 @@
       gap: 18px;
     }
 
-    .signature-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
+    .signature-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
     .signature-card {
       position: relative;
@@ -368,9 +362,7 @@
 
     .signature-meta strong { color: var(--charcoal); }
 
-    .categories-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
+    .categories-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
     .category-card h3,
     .why-card h3,
@@ -382,10 +374,7 @@
       margin-bottom: 10px;
     }
 
-    .gifting-card {
-      max-width: 920px;
-      margin: 0 auto;
-    }
+    .gifting-card { max-width: 920px; margin: 0 auto; }
 
     .gifting-points {
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -399,10 +388,7 @@
       background: rgba(255,255,255,0.72);
     }
 
-    .why-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
+    .why-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .why-card h3 { margin-bottom: 8px; }
 
     .steps-grid {
@@ -585,18 +571,10 @@
         grid-column: 1 / -1;
       }
 
-      .gifting-points {
-        grid-template-columns: 1fr;
-      }
+      .gifting-points { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 760px) {
-      .container { width: min(calc(100% - 44px), var(--max)); }
-      .nav-links a:not(.btn) { display: none; }
-      .hero { padding-top: 34px; }
-
-      .hero-grid,
-      .signature-grid,
+    @media (max-width: 760px) {$1.signature-grid,
       .categories-grid,
       .why-grid,
       .steps-grid,
@@ -612,9 +590,7 @@
         order: 1;
       }
 
-      .hero-copy-block {
-        order: 2;
-      }
+      .hero-copy-block { order: 2; }
 
       .hero h1 {
         font-size: 3rem;
@@ -622,9 +598,7 @@
       }
 
       .hero-lead,
-      .hero-copy {
-        max-width: none;
-      }
+      .hero-copy { max-width: none; }
 
       .footer { padding-bottom: 104px; }
       .sticky-cta { display: block; }
@@ -655,23 +629,25 @@
 
   <main id="top">
     <section class="section hero">
-      <div class="container hero-grid">
-        <div class="card hero-logo-wrap">
-          <img class="hero-logo" src="logo-placeholder.png" alt="Keri Crafts brand mark" onerror="this.outerHTML='<div style=\"font-size:5rem;font-weight:700;color:#0b8b4c;font-family:Recoleta,Georgia,serif;\">K</div>'" />
-        </div>
+      <div class="container">
+        <div class="hero-grid">
+          <div class="card hero-logo-wrap">
+            <img class="hero-logo" src="logo-placeholder.png" alt="Keri Crafts brand mark" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=&quot;hero-logo-fallback&quot;>K</div>');" />
+          </div>
 
-        <div class="hero-copy-block">
-          <div class="preorder-badge">Now open for pre-orders • Batch KC01</div>
-          <h1>Gujarati craft, shared with care.</h1>
-          <p class="hero-lead">Keri Crafts is a Gujarati craft food brand shaped by seasonal batches, thoughtful making, and a more personal way to order.</p>
-          <div class="hero-copy">
-            <p>Rooted in familiar flavour and careful preparation, each offering is made in limited quantities and shared directly with care.</p>
+          <div class="hero-copy-block">
+            <div class="preorder-badge">Now open for pre-orders • Batch KC01</div>
+            <h1>Gujarati craft, shared with care.</h1>
+            <p class="hero-lead">Keri Crafts is a Gujarati craft food brand shaped by seasonal batches, thoughtful making, and a more personal way to order.</p>
+            <div class="hero-copy">
+              <p>Rooted in familiar flavour and careful preparation, each offering is made in limited quantities and shared directly with care.</p>
+            </div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
+              <a class="btn btn-secondary" href="https://www.instagram.com/keri.crafts/" target="_blank" rel="noopener">Visit Instagram</a>
+            </div>
+            <p class="micro-note">Pre-orders are now open for Batch KC01. Ask us what’s included in the current batch.</p>
           </div>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
-            <a class="btn btn-secondary" href="https://www.instagram.com/keri.crafts/" target="_blank" rel="noopener">Visit Instagram</a>
-          </div>
-          <p class="micro-note">Pre-orders are now open for Batch KC01. Ask us what’s included in the current batch.</p>
         </div>
       </div>
     </section>
@@ -821,7 +797,7 @@
             <li>Custom inquiries</li>
           </ul>
           <div style="margin-top:20px;">
-            <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">Ask on WhatsApp</a>
+            <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">Ask about Batch KC01</a>
           </div>
         </div>
       </div>
@@ -952,7 +928,7 @@
             <a href="https://www.instagram.com/keri.crafts/" target="_blank" rel="noopener">Instagram: @keri.crafts</a>
           </div>
           <div class="hero-actions" style="margin-bottom:0;">
-            <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
             <a class="btn btn-secondary" href="https://www.instagram.com/keri.crafts/" target="_blank" rel="noopener">Instagram</a>
           </div>
         </article>
@@ -1033,12 +1009,10 @@
         message: document.getElementById('message')
       };
       const error = document.getElementById('formError');
-
       const emailValid = (value) => !value || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
       form.addEventListener('submit', function (event) {
         event.preventDefault();
-
         const values = Object.fromEntries(
           Object.entries(fields).map(([key, el]) => [key, (el.value || '').trim()])
         );
@@ -1047,22 +1021,10 @@
         error.style.display = 'none';
 
         let hasError = false;
-        if (!values.name) {
-          fields.name.classList.add('invalid');
-          hasError = true;
-        }
-        if (!values.phone) {
-          fields.phone.classList.add('invalid');
-          hasError = true;
-        }
-        if (!values.message) {
-          fields.message.classList.add('invalid');
-          hasError = true;
-        }
-        if (!emailValid(values.email)) {
-          fields.email.classList.add('invalid');
-          hasError = true;
-        }
+        if (!values.name) { fields.name.classList.add('invalid'); hasError = true; }
+        if (!values.phone) { fields.phone.classList.add('invalid'); hasError = true; }
+        if (!values.message) { fields.message.classList.add('invalid'); hasError = true; }
+        if (!emailValid(values.email)) { fields.email.classList.add('invalid'); hasError = true; }
 
         if (hasError) {
           error.style.display = 'block';
