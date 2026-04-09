@@ -733,23 +733,26 @@
       .sticky-cta { display: block; }
     }
 
-      .hero-logo-wrap {
-        min-height: 220px;
-        order: 1;
-      }
+    .mini-wa {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 16px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(11, 139, 76, 0.16);
+      color: var(--green-deep);
+      background: rgba(255,255,255,0.78);
+      font-size: 0.9rem;
+      font-weight: 600;
+      position: relative;
+      z-index: 3;
+      transition: 180ms ease;
+    }
 
-      .hero-copy-block { order: 2; }
-
-      .hero h1 {
-        font-size: 3rem;
-        max-width: none;
-      }
-
-      .hero-lead,
-      .hero-copy { max-width: none; }
-
-      .footer { padding-bottom: 104px; }
-      .sticky-cta { display: block; }
+    .mini-wa:hover {
+      background: rgba(11, 139, 76, 0.06);
+      transform: translateY(-1px);
     }
   </style>
 </head>
@@ -845,6 +848,7 @@
               <li><strong>Taste profile:</strong> Sweet, gently spiced, and rounded with a lingering warmth.</li>
               <li><strong>Best enjoyed with:</strong> Thepla, paratha, khakhra, or even a simple spoonful on the side.</li>
             </ul>
+            <a class="mini-wa wa-dynamic" data-product-names="Keri Chundo" href="#" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
           </article>
           <article class="card signature-card">
             <h3>Keri Murabbo</h3>
@@ -853,6 +857,7 @@
               <li><strong>Taste profile:</strong> Soft, mellow, and sweet with a delicate spiced depth.</li>
               <li><strong>Best enjoyed with:</strong> Rotis, festive meals, or as a sweeter accompaniment at the table.</li>
             </ul>
+            <a class="mini-wa wa-dynamic" data-product-names="Keri Murabbo" href="#" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
           </article>
           <article class="card signature-card">
             <h3>Katki Keri</h3>
@@ -861,6 +866,7 @@
               <li><strong>Taste profile:</strong> Textured, sweet-spiced, and fuller in bite and character.</li>
               <li><strong>Best enjoyed with:</strong> Thepla, phulka, or alongside everyday Gujarati meals.</li>
             </ul>
+            <a class="mini-wa wa-dynamic" data-product-names="Katki Keri" href="#" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
           </article>
           <article class="card signature-card">
             <h3>God Keri</h3>
@@ -869,6 +875,7 @@
               <li><strong>Taste profile:</strong> Bold, masaledar, and lively with a sharper finish.</li>
               <li><strong>Best enjoyed with:</strong> Dal-rice, paratha, curd rice, or comfort meals that need a punch.</li>
             </ul>
+            <a class="mini-wa wa-dynamic" data-product-names="God Keri" href="#" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
           </article>
           <article class="card signature-card">
             <h3>Vaghariyu</h3>
@@ -877,6 +884,7 @@
               <li><strong>Taste profile:</strong> Tempered, savoury, and spice-forward with deep Gujarati character.</li>
               <li><strong>Best enjoyed with:</strong> Thepla, rotli, khichdi, or traditional home-style meals.</li>
             </ul>
+            <a class="mini-wa wa-dynamic" data-product-names="Vaghariyu" href="#" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
           </article>
           <article class="card signature-card">
             <h3>Amba Hardar</h3>
@@ -885,6 +893,7 @@
               <li><strong>Taste profile:</strong> Earthy, warm, and grounded with haldi-led depth.</li>
               <li><strong>Best enjoyed with:</strong> Rotli-shaak, dal-chawal, curd rice, or simple home meals.</li>
             </ul>
+            <a class="mini-wa wa-dynamic" data-product-names="Amba Hardar" href="#" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
           </article>
           <article class="card signature-card">
             <h3>Khatta Athanu</h3>
@@ -893,6 +902,7 @@
               <li><strong>Taste profile:</strong> Tangy, punchy, and bright with a lively finish.</li>
               <li><strong>Best enjoyed with:</strong> Thepla, paratha, khichdi, or whenever a meal needs an instant lift.</li>
             </ul>
+            <a class="mini-wa wa-dynamic" data-product-names="Khatta Athanu" href="#" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
           </article>
         </div>
       </div>
@@ -914,12 +924,14 @@
               <li>Katki Keri</li>
               <li>God Keri</li>
             </ul>
+            <a class="mini-wa wa-dynamic" data-product-names="Keri Chundo, Keri Murabbo, Katki Keri, God Keri" href="#" target="_blank" rel="noopener">Ask on WhatsApp</a>
           </article>
           <article class="card category-card">
             <h3>Spiced Preparations</h3>
             <ul class="category-list">
               <li>Vaghariyu</li>
             </ul>
+            <a class="mini-wa wa-dynamic" data-product-names="Vaghariyu" href="#" target="_blank" rel="noopener">Ask on WhatsApp</a>
           </article>
           <article class="card category-card">
             <h3>Tangy Pickles</h3>
@@ -927,6 +939,7 @@
               <li>Amba Hardar</li>
               <li>Khatta Athanu</li>
             </ul>
+            <a class="mini-wa wa-dynamic" data-product-names="Amba Hardar, Khatta Athanu" href="#" target="_blank" rel="noopener">Ask on WhatsApp</a>
           </article>
         </div>
       </div>
@@ -1149,46 +1162,60 @@
 
   <script>
     (function () {
-      const form = document.getElementById('inquiryForm');
+      const form = document.getElementById(‘inquiryForm’);
+      const error = document.getElementById(‘formError’);
+
+      function createWhatsAppLink(productNames) {
+        const message = `Hi, I just discovered Keri Crafts and would love to pre-order from Batch KC\u201401.\n\nName:\nCity: [Mumbai]\nProduct Names: ${productNames}\nSize: [500g / 1kg]\nQuantity:`;
+        return `https://wa.me/919223381903?text=${encodeURIComponent(message)}`;
+      }
+
+      const genericLink = createWhatsAppLink(‘[eg.: Keri Chundo]’);
+
+      document.querySelectorAll(‘a[href*="wa.me/919223381903"]’).forEach(function (link) {
+        if (!link.classList.contains(‘wa-dynamic’)) {
+          link.href = genericLink;
+        }
+      });
+
+      document.querySelectorAll(‘.wa-dynamic’).forEach(function (link) {
+        const productNames = link.getAttribute(‘data-product-names’) || ‘[eg.: Keri Chundo]’;
+        link.href = createWhatsAppLink(productNames);
+      });
+
       if (!form) return;
 
       const fields = {
-        name: document.getElementById('name'),
-        phone: document.getElementById('phone'),
-        city: document.getElementById('city'),
-        type: document.getElementById('type'),
-        message: document.getElementById('message')
+        name: document.getElementById(‘name’),
+        phone: document.getElementById(‘phone’),
+        city: document.getElementById(‘city’),
+        type: document.getElementById(‘type’),
+        message: document.getElementById(‘message’)
       };
-      const error = document.getElementById('formError');
 
-      form.addEventListener('submit', function (event) {
+      form.addEventListener(‘submit’, function (event) {
         event.preventDefault();
+
         const values = Object.fromEntries(
-          Object.entries(fields).map(([key, el]) => [key, (el.value || '').trim()])
+          Object.entries(fields).map(([key, el]) => [key, (el.value || ‘’).trim()])
         );
 
-        Object.values(fields).forEach((el) => el.classList.remove('invalid'));
-        error.style.display = 'none';
+        Object.values(fields).forEach(function (el) { el.classList.remove(‘invalid’); });
+        if (error) error.style.display = ‘none’;
 
         let hasError = false;
-        if (!values.name) { fields.name.classList.add('invalid'); hasError = true; }
-        if (!values.phone) { fields.phone.classList.add('invalid'); hasError = true; }
-        if (!values.message) { fields.message.classList.add('invalid'); hasError = true; }
+        if (!values.name) { fields.name.classList.add(‘invalid’); hasError = true; }
+        if (!values.phone) { fields.phone.classList.add(‘invalid’); hasError = true; }
+        if (!values.message) { fields.message.classList.add(‘invalid’); hasError = true; }
 
         if (hasError) {
-          error.style.display = 'block';
+          if (error) error.style.display = ‘block’;
           return;
         }
 
-        const whatsappMessage = `Hi, I’d like to send an inquiry to Keri Crafts regarding Batch KC—01.
-
-Name: ${values.name}
-Phone Number: ${values.phone}
-City: ${values.city}
-Type of Inquiry: ${values.type}
-Message: ${values.message}`;
+        const whatsappMessage = `Hi, I’d like to send an inquiry to Keri Crafts regarding Batch KC\u201401.\n\nName: ${values.name}\nPhone Number: ${values.phone}\nCity: ${values.city}\nType of Inquiry: ${values.type}\nMessage: ${values.message}`;
         const url = `https://wa.me/919223381903?text=${encodeURIComponent(whatsappMessage)}`;
-        window.open(url, '_blank');
+        window.open(url, ‘_blank’);
       });
     })();
   </script>
