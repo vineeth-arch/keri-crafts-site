@@ -581,10 +581,14 @@
     }
 
     .form-error {
-      font-size: 0.86rem;
+      font-size: 0.9rem;
+      font-weight: 600;
       color: #9b1c1c;
+      background: rgba(155,28,28,0.06);
+      border: 1px solid rgba(155,28,28,0.2);
+      border-radius: 10px;
+      padding: 10px 14px;
       display: none;
-      margin-top: -4px;
     }
 
     label {
@@ -1262,59 +1266,11 @@
       </div>
     </section>
 
-    <section class="section" id="contact">
-      <div class="container contact-grid">
-        <article class="card contact-panel">
-          <h3>Message us to know what’s currently available.</h3>
-          <p>Keri Crafts is based in Mumbai and designed to feel direct and approachable. Ask about current batches, gifting, custom requests, or delivery details.</p>
-          <div class="contact-list">
-            <a href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC—01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">WhatsApp: +91 92233 81903</a>
-            <a href="https://www.instagram.com/keri.crafts/" target="_blank" rel="noopener">Instagram: @keri.crafts</a>
-          </div>
-          <div class="hero-actions" style="margin-bottom:0;">
-            <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC—01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
-            <a class="btn btn-secondary" href="https://www.instagram.com/keri.crafts/" target="_blank" rel="noopener">Instagram</a>
-          </div>
-        </article>
-
-        <article class="card inquiry-panel" id="inquiry">
-          <h3>We’d love to hear from you</h3>
-          <p style="margin-top:8px; color:#4a584c;">Ask us about current offerings, gifting, custom requests, or Batch KC—01.</p>
-          <form class="inquiry-form" id="inquiryForm" novalidate>
-            <div class="form-grid">
-              <label>Name
-                <input type="text" name="name" id="name" placeholder="Your name" />
-              </label>
-              <label>Phone Number
-                <input type="tel" name="phone" id="phone" placeholder="Your phone number" />
-              </label>
-            </div>
-            <div class="form-grid">
-              <label>City
-                <input type="text" name="city" id="city" value="Mumbai" placeholder="Your city" />
-              </label>
-              <label>Email <span style="font-weight:400;color:#8a9b8c">(optional)</span>
-                <input type="email" name="email" id="email" placeholder="Your email address" />
-              </label>
-            </div>
-            <div class="form-grid">
-              <label>Type of Inquiry
-                <select name="type" id="type">
-                  <option value="Personal order">Personal order</option>
-                  <option value="Gifting inquiry">Gifting inquiry</option>
-                  <option value="Custom order">Custom order</option>
-                  <option value="General inquiry">General inquiry</option>
-                </select>
-              </label>
-            </div>
-            <label>Message
-              <textarea name="message" id="message" placeholder="Your message or inquiry..."></textarea>
-            </label>
-            <p class="form-error" id="formError">Please fill in your Name and Phone Number.</p>
-            <button class="btn btn-primary" type="button" id="sendInquiryBtn">Send Inquiry</button>
-            <p class="form-note">For the quickest response, you can also message us directly on WhatsApp.</p>
-          </form>
-        </article>
+    <section class="section" id="contact" style="text-align:center; padding: 32px 0 48px;">
+      <div class="container" style="max-width:620px;">
+        <span class="kicker">Say Hello</span>
+        <h2 style="margin: 10px 0 16px; font-size: clamp(1.8rem, 3.5vw, 2.6rem);">Have something on your mind?</h2>
+        <p style="color:#405043; font-size:1.05rem; line-height:1.7;">Whether it’s about Batch KC—01, a gifting request, or just something you’re curious about — tap the WhatsApp button at the bottom of the page and reach out directly. We’d love to hear from you.</p>
       </div>
     </section>
   </main>
@@ -1330,7 +1286,6 @@
       <div class="footer-links">
         <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC%E2%80%9401.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">WhatsApp</a>
         <a class="btn btn-secondary" href="https://www.instagram.com/keri.crafts/" target="_blank" rel="noopener">Instagram</a>
-        <a class="btn btn-tertiary" href="#inquiry">Inquiry Form</a>
       </div>
     </div>
     <div class="container" style="padding-top:14px; border-top:1px solid rgba(11,139,76,0.08); margin-top:18px; color:#677268; font-size:0.9rem;">
@@ -1342,59 +1297,6 @@
     <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC—01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
   </div>
 
-  <script>
-    (function () {
-      const btn = document.getElementById(‘sendInquiryBtn’);
-      if (!btn) return;
-
-      const error = document.getElementById(‘formError’);
-      const fields = {
-        name:    document.getElementById(‘name’),
-        phone:   document.getElementById(‘phone’),
-        email:   document.getElementById(‘email’),
-        city:    document.getElementById(‘city’),
-        type:    document.getElementById(‘type’),
-        message: document.getElementById(‘message’)
-      };
-
-      btn.addEventListener(‘click’, function () {
-        const values = {};
-        Object.entries(fields).forEach(function (pair) {
-          values[pair[0]] = pair[1] ? (pair[1].value || ‘’).trim() : ‘’;
-        });
-
-        Object.values(fields).forEach(function (el) { if (el) el.classList.remove(‘invalid’); });
-        if (error) error.style.display = ‘none’;
-
-        var hasError = false;
-        if (!values.name)  { fields.name.classList.add(‘invalid’);  hasError = true; }
-        if (!values.phone) { fields.phone.classList.add(‘invalid’); hasError = true; }
-
-        if (hasError) {
-          if (error) error.style.display = ‘block’;
-          return;
-        }
-
-        var emailLine = values.email ? (‘\nEmail: ‘ + values.email) : ‘’;
-        var msgLine   = values.message ? (‘\nMessage: ‘ + values.message) : ‘’;
-        var waMsg = ‘Hi, I\u2019d like to send an inquiry to Keri Crafts regarding Batch KC\u201401.’
-          + ‘\n\nName: ‘            + values.name
-          + ‘\nPhone Number: ‘      + values.phone
-          + emailLine
-          + ‘\nCity: ‘             + values.city
-          + ‘\nType of Inquiry: ‘  + values.type
-          + msgLine;
-
-        var a = document.createElement(‘a’);
-        a.href = ‘https://wa.me/919223381903?text=’ + encodeURIComponent(waMsg);
-        a.target = ‘_blank’;
-        a.rel = ‘noopener’;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-      });
-    })();
-  </script>
   <script
     async
     src="https://app.querygen.ai/widget-sdk/tldr-wa-widget.js"
