@@ -191,12 +191,12 @@
     }
 
     .hero {
-      padding: 32px 0 24px;
+      padding: 40px 0 30px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(200px, 38%) minmax(0, 62%);
+      grid-template-columns: minmax(280px, 40%) minmax(0, 60%);
       gap: 40px;
       align-items: center;
     }
@@ -212,15 +212,8 @@
     .hero-logo-wrap {
       display: grid;
       place-items: center;
-      min-height: 220px;
+      min-height: 260px;
       padding: 18px;
-    }
-
-    .logo-fallback {
-      font-size: 4rem;
-      font-weight: 700;
-      color: var(--green-deep);
-      font-family: "Recoleta", Georgia, serif;
     }
 
     .hero-logo {
@@ -235,10 +228,10 @@
 
     .hero h1 {
       font-weight: 900;
-      font-size: clamp(1.8rem, 3.2vw, 2.8rem);
-      line-height: 1.05;
-      margin-bottom: 14px;
-      max-width: 18ch;
+      font-size: clamp(2.7rem, 5.1vw, 4.6rem);
+      line-height: 0.95;
+      margin-bottom: 16px;
+      max-width: 10.5ch;
     }
 
     .hero-lead {
@@ -247,6 +240,37 @@
       color: #37453b;
       margin-bottom: 14px;
       font-weight: 400;
+    }
+
+    .preorder-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(11, 139, 76, 0.12);
+      background: rgba(255,255,255,0.72);
+      color: var(--green-deep);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .batch-strip {
+      border-bottom: 1px solid rgba(11, 139, 76, 0.08);
+      background: rgba(255,255,255,0.42);
+    }
+
+    .batch-strip-inner {
+      padding: 10px 0;
+      color: #425045;
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    .batch-block {
+      max-width: 940px;
+      margin: 0 auto;
     }
 
     .hero-copy {
@@ -552,8 +576,8 @@
       }
 
       .hero-grid {
-        grid-template-columns: minmax(200px, 34%) minmax(0, 66%);
-        gap: 24px;
+        grid-template-columns: minmax(240px, 36%) minmax(0, 64%);
+        gap: 28px;
       }
 
       .contact-grid > :first-child,
@@ -571,11 +595,7 @@
       .nav-links a:not(.btn) { display: none; }
       .hero { padding-top: 34px; }
 
-      .hero-grid {
-        grid-template-columns: minmax(140px, 36%) minmax(0, 64%);
-        gap: 20px;
-      }
-
+      .hero-grid,
       .signature-grid,
       .categories-grid,
       .why-grid,
@@ -588,11 +608,16 @@
       }
 
       .hero-logo-wrap {
-        min-height: 160px;
+        min-height: 220px;
+        order: 1;
+      }
+
+      .hero-copy-block {
+        order: 2;
       }
 
       .hero h1 {
-        font-size: 1.6rem;
+        font-size: 3rem;
         max-width: none;
       }
 
@@ -619,31 +644,34 @@
         <a href="#how-to-order">How to Order</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
-        <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20place%20an%20order.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0ASize%3A%0AQuantity%3A" target="_blank" rel="noopener">Order on WhatsApp</a>
+        <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
       </div>
     </div>
   </nav>
 
+  <div class="batch-strip">
+    <div class="container batch-strip-inner">Batch KC01 is now open for pre-orders. Message us on WhatsApp to know what’s included.</div>
+  </div>
+
   <main id="top">
     <section class="section hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="card hero-logo-wrap">
-            <img class="hero-logo" src="logo-placeholder.png" alt="Keri Crafts brand mark" onerror="this.style.display=’none’;this.parentNode.insertAdjacentHTML(‘beforeend’,’<div class=logo-fallback>K</div>’)" />
-          </div>
+      <div class="container hero-grid">
+        <div class="card hero-logo-wrap">
+          <img class="hero-logo" src="logo-placeholder.png" alt="Keri Crafts brand mark" onerror="this.outerHTML='<div style=\"font-size:5rem;font-weight:700;color:#0b8b4c;font-family:Recoleta,Georgia,serif;\">K</div>'" />
+        </div>
 
-          <div class="hero-copy-block">
-            <h1>Gujarati craft, shared with care.</h1>
-            <p class="hero-lead">Keri Crafts is a Gujarati craft food brand shaped by seasonal batches, thoughtful making, and a more personal way to order.</p>
-            <div class="hero-copy">
-              <p>Rooted in familiar flavour and careful preparation, each offering is made in limited quantities and shared directly with care.</p>
-            </div>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20place%20an%20order.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0ASize%3A%0AQuantity%3A" target="_blank" rel="noopener">Order on WhatsApp</a>
-              <a class="btn btn-secondary" href="https://www.instagram.com/keri.crafts/" target="_blank" rel="noopener">Visit Instagram</a>
-            </div>
-            <p class="micro-note">Ask us what’s currently available.</p>
+        <div class="hero-copy-block">
+          <div class="preorder-badge">Now open for pre-orders • Batch KC01</div>
+          <h1>Gujarati craft, shared with care.</h1>
+          <p class="hero-lead">Keri Crafts is a Gujarati craft food brand shaped by seasonal batches, thoughtful making, and a more personal way to order.</p>
+          <div class="hero-copy">
+            <p>Rooted in familiar flavour and careful preparation, each offering is made in limited quantities and shared directly with care.</p>
           </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
+            <a class="btn btn-secondary" href="https://www.instagram.com/keri.crafts/" target="_blank" rel="noopener">Visit Instagram</a>
+          </div>
+          <p class="micro-note">Pre-orders are now open for Batch KC01. Ask us what’s included in the current batch.</p>
         </div>
       </div>
     </section>
@@ -663,12 +691,26 @@
       </div>
     </section>
 
+    <section class="section" id="current-batch">
+      <div class="container">
+        <div class="card batch-block">
+          <div class="section-head" style="margin-bottom:14px; max-width:none;">
+            <span class="kicker">Current Batch</span>
+            <h2>Pre-orders are now open for KC01.</h2>
+            <p>Keri Crafts is currently taking pre-orders for Batch KC01. This batch is being shared in limited quantities and may include selected sweet preserves, spiced preparations, and tangy pickles based on current availability.</p>
+            <p>Message us on WhatsApp to know what is included in KC01 and to place your order.</p>
+          </div>
+          <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="signature">
       <div class="container">
         <div class="section-head">
           <span class="kicker">Signature Offerings</span>
           <h2>A closer look at what Keri Crafts offers.</h2>
-          <p>Our offerings are made in limited quantities and may vary by batch and season. Message us to know current availability.</p>
+          <p>Our offerings are made in limited quantities and may vary by batch and season. We are currently open for pre-orders for Batch KC01. Message us to know what is available in this batch.</p>
         </div>
 
         <div class="signature-grid">
@@ -676,56 +718,56 @@
             <h3>Keri Chundo</h3>
             <p>Sweet-spiced grated keri, slow-made to a rich and glossy finish with a familiar Gujarati warmth.</p>
             <ul class="signature-meta">
-              <li><strong>Format:</strong> Small batch</li>
-              <li><strong>Availability:</strong> Available on request</li>
+              <li><strong>Taste profile:</strong> Sweet, gently spiced, and rounded with a lingering warmth.</li>
+              <li><strong>Best enjoyed with:</strong> Thepla, paratha, khakhra, or even a simple spoonful on the side.</li>
             </ul>
           </article>
           <article class="card signature-card">
             <h3>Keri Murabbo</h3>
             <p>Soft keri pieces prepared in a gentler, sweeter profile with a thoughtful festive character.</p>
             <ul class="signature-meta">
-              <li><strong>Format:</strong> Small batch</li>
-              <li><strong>Availability:</strong> Made in limited quantities</li>
+              <li><strong>Taste profile:</strong> Soft, mellow, and sweet with a delicate spiced depth.</li>
+              <li><strong>Best enjoyed with:</strong> Rotis, festive meals, or as a sweeter accompaniment at the table.</li>
             </ul>
           </article>
           <article class="card signature-card">
             <h3>Katki Keri</h3>
             <p>Chunk-cut keri gently cooked into a sweet, spiced preparation with a rich bite.</p>
             <ul class="signature-meta">
-              <li><strong>Format:</strong> Small batch</li>
-              <li><strong>Availability:</strong> Available on request</li>
+              <li><strong>Taste profile:</strong> Textured, sweet-spiced, and fuller in bite and character.</li>
+              <li><strong>Best enjoyed with:</strong> Thepla, phulka, or alongside everyday Gujarati meals.</li>
             </ul>
           </article>
           <article class="card signature-card">
             <h3>God Keri</h3>
             <p>Chunk-cut keri tossed in a robust masala, delivering texture, heat, and sharpness.</p>
             <ul class="signature-meta">
-              <li><strong>Format:</strong> Small batch</li>
-              <li><strong>Availability:</strong> Available on request</li>
+              <li><strong>Taste profile:</strong> Bold, masaledar, and lively with a sharper finish.</li>
+              <li><strong>Best enjoyed with:</strong> Dal-rice, paratha, curd rice, or comfort meals that need a punch.</li>
             </ul>
           </article>
           <article class="card signature-card">
             <h3>Vaghariyu</h3>
             <p>A bold keri preparation with a distinctive vaghar-led character and a deeply rooted flavour profile.</p>
             <ul class="signature-meta">
-              <li><strong>Format:</strong> Small batch</li>
-              <li><strong>Availability:</strong> Subject to batch availability</li>
+              <li><strong>Taste profile:</strong> Tempered, savoury, and spice-forward with deep Gujarati character.</li>
+              <li><strong>Best enjoyed with:</strong> Thepla, rotli, khichdi, or traditional home-style meals.</li>
             </ul>
           </article>
           <article class="card signature-card">
             <h3>Amba Hardar</h3>
             <p>Keri pickle with haldi-led warmth, bringing earthy depth and traditional character.</p>
             <ul class="signature-meta">
-              <li><strong>Format:</strong> Small batch</li>
-              <li><strong>Availability:</strong> Subject to batch availability</li>
+              <li><strong>Taste profile:</strong> Earthy, warm, and grounded with haldi-led depth.</li>
+              <li><strong>Best enjoyed with:</strong> Rotli-shaak, dal-chawal, curd rice, or simple home meals.</li>
             </ul>
           </article>
           <article class="card signature-card">
             <h3>Khatta Athanu</h3>
             <p>A sharper, tangier keri offering with a lively flavour profile and a more pronounced edge.</p>
             <ul class="signature-meta">
-              <li><strong>Format:</strong> Small batch</li>
-              <li><strong>Availability:</strong> Ask us for current availability</li>
+              <li><strong>Taste profile:</strong> Tangy, punchy, and bright with a lively finish.</li>
+              <li><strong>Best enjoyed with:</strong> Thepla, paratha, khichdi, or whenever a meal needs an instant lift.</li>
             </ul>
           </article>
         </div>
@@ -779,7 +821,7 @@
             <li>Custom inquiries</li>
           </ul>
           <div style="margin-top:20px;">
-            <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20place%20an%20order.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0ASize%3A%0AQuantity%3A" target="_blank" rel="noopener">Ask on WhatsApp</a>
+            <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">Ask on WhatsApp</a>
           </div>
         </div>
       </div>
@@ -856,7 +898,7 @@
         </div>
 
         <div style="margin-top:24px;">
-          <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20place%20an%20order.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0ASize%3A%0AQuantity%3A" target="_blank" rel="noopener">Message on WhatsApp</a>
+          <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">Message us for KC01</a>
         </div>
       </div>
     </section>
@@ -906,11 +948,11 @@
           <h3>Message us to know what’s currently available.</h3>
           <p>Keri Crafts is based in Mumbai and designed to feel direct and approachable. Ask about current batches, gifting, custom requests, or delivery details.</p>
           <div class="contact-list">
-            <a href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20place%20an%20order.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0ASize%3A%0AQuantity%3A" target="_blank" rel="noopener">WhatsApp: +91 92233 81903</a>
+            <a href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">WhatsApp: +91 92233 81903</a>
             <a href="https://www.instagram.com/keri.crafts/" target="_blank" rel="noopener">Instagram: @keri.crafts</a>
           </div>
           <div class="hero-actions" style="margin-bottom:0;">
-            <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20place%20an%20order.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0ASize%3A%0AQuantity%3A" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">WhatsApp</a>
             <a class="btn btn-secondary" href="https://www.instagram.com/keri.crafts/" target="_blank" rel="noopener">Instagram</a>
           </div>
         </article>
@@ -966,7 +1008,7 @@
       </div>
 
       <div class="footer-links">
-        <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20place%20an%20order.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0ASize%3A%0AQuantity%3A" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">WhatsApp</a>
         <a class="btn btn-secondary" href="https://www.instagram.com/keri.crafts/" target="_blank" rel="noopener">Instagram</a>
         <a class="btn btn-tertiary" href="#inquiry">Inquiry Form</a>
       </div>
@@ -974,7 +1016,7 @@
   </footer>
 
   <div class="sticky-cta">
-    <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20place%20an%20order.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0ASize%3A%0AQuantity%3A" target="_blank" rel="noopener">Order on WhatsApp</a>
+    <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
   </div>
 
   <script>
@@ -1027,7 +1069,7 @@
           return;
         }
 
-        const whatsappMessage = `Hi, I’d like to send an inquiry to Keri Crafts.
+        const whatsappMessage = `Hi, I’d like to send an inquiry to Keri Crafts regarding Batch KC01.
 
 Name: ${values.name}
 Phone Number: ${values.phone}
