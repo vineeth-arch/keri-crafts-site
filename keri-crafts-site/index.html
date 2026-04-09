@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keri Crafts | Pickles &amp; Preserves</title>
+  <meta name="description" content="A taste and craft-led Gujarati brand rooted in flavour, small-batch care, and thoughtful direct ordering." />
+  <meta property="og:title" content="Keri Crafts" />
+  <meta property="og:description" content="A taste and craft-led Gujarati brand rooted in flavour, small-batch care, and thoughtful direct ordering." />
+  <meta name="theme-color" content="#0b8b4c" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="shortcut icon" href="favicon.png" />
+  <style>
+    @font-face {
+      font-family: "Satoshi";
+      src: url("fonts/Satoshi-Regular.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Satoshi";
+      src: url("fonts/Satoshi-Bold.otf") format("opentype");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Satoshi";
+      src: url("fonts/Satoshi-Black.otf") format("opentype");
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Fraunces";
+      src: url("fonts/Fraunces_72pt-Italic.ttf") format("truetype");
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Recoleta";
+      src: url("fonts/Recoleta-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    
+
+    :root {
+      --green-deep: #0b8b4c;
+      --green-bright: #69c246;
+      --green-soft: #a6d466;
+      --ivory: #eeeee8;
+      --charcoal: #1d1d1b;
+      --muted: #546056;
+      --white: #ffffff;
+      --line: rgba(11, 139, 76, 0.12);
+      --line-strong: rgba(11, 139, 76, 0.22);
+      --shadow: 0 16px 44px rgba(11, 139, 76, 0.08);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Satoshi", Arial, sans-serif;
+      background: var(--ivory);
+      color: var(--charcoal);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    h1, h2, h3, h4 {
+      margin: 0;
+      font-family: "Satoshi", Arial, sans-serif;
+      letter-spacing: -0.02em;
+      color: var(--green-deep);
+    }
+    p { margin: 0; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .container {
+      width: min(calc(100% - 120px), var(--max));
+      margin: 0 auto;
+    }
+
+    .section { padding: 48px 0; }
+
+    .section-head {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 24px;
+      max-width: 860px;
+    }
+
+    .kicker {
+      color: var(--green-deep);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.02;
+      font-weight: 700;
+    }
+
+    .section-head p {
+      max-width: 68ch;
+      color: #405043;
+      font-size: 1.02rem;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      backdrop-filter: blur(12px);
+      background: rgba(238, 238, 232, 0.9);
+      border-bottom: 1px solid rgba(11, 139, 76, 0.09);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .nav-logo {
+      height: 54px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover { color: var(--green-deep); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 13px 20px;
+      font-weight: 600;
+      transition: 180ms ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--green-deep);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+    .btn-primary:hover { transform: translateY(-1px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--green-deep);
+      border-color: var(--line-strong);
+    }
+    .btn-secondary:hover { background: rgba(11, 139, 76, 0.05); }
+    .btn-tertiary {
+      background: rgba(255,255,255,0.75);
+      color: var(--charcoal);
+      border-color: rgba(0,0,0,0.08);
+    }
+
+    .batch-strip {
+      border-bottom: 1px solid rgba(11, 139, 76, 0.08);
+      background: rgba(255,255,255,0.42);
+    }
+
+    .batch-strip-inner {
+      padding: 10px 0;
+      color: #425045;
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    .hero { padding: 32px 0 24px; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(200px, 38%) minmax(0, 62%);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(11, 139, 76, 0.1);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .hero-logo-wrap {
+      display: grid;
+      place-items: center;
+      min-height: 260px;
+      padding: 18px;
+    }
+
+    .hero-logo {
+      width: min(100%, 300px);
+      height: auto;
+      object-fit: contain;
+    }
+
+    .hero-logo-fallback {
+      font-size: 5rem;
+      font-weight: 700;
+      color: #0b8b4c;
+      font-family: "Recoleta", Georgia, serif;
+      line-height: 1;
+    }
+
+    .hero-copy-block { max-width: 680px; }
+
+    .preorder-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(11, 139, 76, 0.12);
+      background: rgba(255,255,255,0.72);
+      color: var(--green-deep);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-weight: 900;
+      font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+      line-height: 0.95;
+      margin-bottom: 16px;
+      max-width: 13ch;
+    }
+
+    .hero-lead {
+      font-size: 1.12rem;
+      max-width: 40rem;
+      color: #37453b;
+      margin-bottom: 14px;
+      font-weight: 400;
+    }
+
+    .hero-copy {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 22px;
+      color: #415045;
+      max-width: 40rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .micro-note {
+      font-family: "Fraunces", Georgia, serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #5c685d;
+    }
+
+    .body-card { max-width: 860px; }
+    .batch-block { max-width: 940px; margin: 0 auto; }
+
+    .signature-grid,
+    .categories-grid,
+    .why-grid,
+    .steps-grid,
+    .faq-grid,
+    .contact-grid,
+    .footer-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .signature-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .sig-card {
+      background: rgba(255,255,255,0.85);
+      border: 1px solid rgba(11,139,76,0.1);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 28px 28px 24px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sig-card::after {
+      content: "";
+      position: absolute;
+      right: -18px;
+      bottom: -22px;
+      width: 96px;
+      height: 96px;
+      border-radius: 24px;
+      transform: rotate(45deg);
+      background: rgba(166,212,102,0.14);
+    }
+
+    .sig-card h3 {
+      font-size: 1.55rem;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .sig-desc {
+      font-family: "Fraunces", Georgia, serif;
+      font-style: italic;
+      color: #405043;
+      font-size: 0.97rem;
+      line-height: 1.55;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .sig-divider {
+      height: 1px;
+      background: linear-gradient(90deg, rgba(11,139,76,0.15), rgba(11,139,76,0.02));
+      margin: 16px 0;
+      border: none;
+      position: relative;
+      z-index: 2;
+    }
+
+    .sig-meta {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+      position: relative;
+      z-index: 2;
+    }
+
+    .sig-meta li {
+      color: #435145;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .sig-meta strong {
+      color: var(--charcoal);
+      font-weight: 600;
+    }
+
+    .sig-cta {
+      display: block;
+      width: 100%;
+      margin-top: 22px;
+      padding: 13px 18px;
+      border-radius: 12px;
+      border: none;
+      text-align: center;
+      color: #ffffff;
+      background: var(--green-deep);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      position: relative;
+      z-index: 3;
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.15) inset,
+        0 -1px 0 rgba(0,0,0,0.1) inset,
+        0 5px 16px rgba(11,139,76,0.28),
+        0 2px 5px rgba(11,139,76,0.14);
+      transition: all 160ms ease;
+    }
+
+    .sig-cta:hover {
+      background: #13a85e;
+      transform: translateY(1px);
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.1) inset,
+        0 2px 8px rgba(11,139,76,0.14);
+    }
+
+    .sig-cta:active {
+      transform: translateY(2px);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1) inset;
+    }
+
+    .category-list,
+    .gifting-points {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .category-list li,
+    .gifting-points li {
+      color: #435145;
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .categories-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .category-card h3,
+    .why-card h3,
+    .faq-item h3,
+    .contact-panel h3,
+    .inquiry-panel h3,
+    .step-card h3 {
+      font-size: 1.32rem;
+      margin-bottom: 10px;
+    }
+
+    .gifting-head {
+      max-width: 680px;
+      margin-bottom: 28px;
+    }
+
+    .gifting-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .gifting-item {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gifting-item h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .gifting-item p {
+      color: #405043;
+      font-size: 0.96rem;
+      line-height: 1.65;
+    }
+
+    .why-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .why-card h3 { margin-bottom: 8px; }
+    .step-illustration {
+      top: 14px;
+      right: 14px;
+      color: var(--green-deep);
+      opacity: 0.9;
+      font-size: 1.35rem;
+      font-family: "Fraunces", Georgia, serif;
+    }
+    .why-illustration {
+      top: -6px;
+      right: -4px;
+      color: rgba(105,194,70,0.32);
+      font-size: 2.8rem;
+      font-family: "Fraunces", Georgia, serif;
+      transform: rotate(-6deg);
+    }
+    .category-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .category-illustration {
+      right: 12px;
+      bottom: 8px;
+      color: rgba(255,255,255,0.95);
+      font-size: 2.2rem;
+      font-family: "Fraunces", Georgia, serif;
+    }
+
+    .steps-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .step-card {
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.75));
+      border: 1px solid rgba(11,139,76,0.1);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .step-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: var(--green-deep);
+      color: white;
+      display: inline-grid;
+      place-items: center;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .faq-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .faq-item { min-height: 100%; }
+
+    .contact-grid {
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+    }
+
+    .contact-panel h3,
+    .inquiry-panel h3 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin: 18px 0 22px;
+    }
+
+    .contact-list a,
+    .contact-list div {
+      display: block;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(11,139,76,0.1);
+      background: rgba(255,255,255,0.8);
+      color: #334136;
+    }
+
+    .inquiry-form {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .form-error {
+      font-size: 0.86rem;
+      color: #9b1c1c;
+      display: none;
+      margin-top: -4px;
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      font-size: 0.92rem;
+      color: #4b584d;
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(11,139,76,0.14);
+      background: rgba(255,255,255,0.86);
+      font: inherit;
+      color: var(--charcoal);
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: rgba(11,139,76,0.34);
+      box-shadow: 0 0 0 3px rgba(11,139,76,0.07);
+    }
+
+    input.invalid, select.invalid, textarea.invalid {
+      border-color: rgba(155, 28, 28, 0.55);
+      box-shadow: 0 0 0 3px rgba(155, 28, 28, 0.06);
+    }
+
+    textarea { min-height: 120px; resize: vertical; }
+
+    .form-note {
+      font-size: 0.86rem;
+      color: #667268;
+    }
+
+    .footer {
+      padding: 30px 0 110px;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+      padding-top: 18px;
+      border-top: 1px solid rgba(11,139,76,0.1);
+      color: #59665b;
+      font-size: 0.94rem;
+      align-items: start;
+    }
+
+    .footer-brand strong {
+      font-family: "Recoleta", Georgia, serif;
+      font-weight: 400;
+      display: block;
+      color: var(--green-deep);
+      margin-bottom: 4px;
+      font-size: 1.2rem;
+    }
+
+    .footer-brand {
+      max-width: 460px;
+    }
+
+    .footer-brand div {
+      color: #59665b;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .sticky-cta {
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      z-index: 220;
+      display: none;
+    }
+
+    .sticky-cta a {
+      width: 100%;
+      box-shadow: 0 18px 50px rgba(11, 139, 76, 0.22);
+    }
+
+    @media (max-width: 1120px) {
+      .container { width: min(calc(100% - 64px), var(--max)); }
+
+      .signature-grid,
+      .categories-grid,
+      .why-grid,
+      .steps-grid,
+      .faq-grid,
+      .contact-grid,
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(240px, 36%) minmax(0, 64%);
+        gap: 28px;
+      }
+
+      .contact-grid > :first-child,
+      .footer-grid > :first-child {
+        grid-column: 1 / -1;
+      }
+
+      .gifting-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(calc(100% - 44px), var(--max)); }
+
+      .nav-inner {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 0;
+      }
+
+      .nav-logo {
+        height: 54px;
+        width: auto;
+        max-width: none;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .nav-links a:not(.btn) { display: none; }
+
+      .hero { padding-top: 34px; }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .signature-grid,
+      .categories-grid,
+      .why-grid,
+      .steps-grid,
+      .faq-grid,
+      .contact-grid,
+      .footer-grid,
+      .form-grid,
+      .gifting-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-logo-wrap {
+        min-height: 220px;
+        order: 1;
+      }
+
+      .hero-copy-block {
+        order: 2;
+      }
+
+      .hero h1 {
+        font-size: 2.3rem;
+        max-width: 12ch;
+      }
+
+      .hero-lead,
+      .hero-copy,
+      .section-head,
+      .body-card,
+      .batch-block,
+      .gifting-head,
+      .footer-brand {
+        max-width: none;
+      }
+
+      .card,
+      .step-card {
+        padding: 22px;
+      }
+
+      .footer-grid {
+        gap: 16px;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+
+      .footer { padding-bottom: 104px; }
+      .sticky-cta { display: block; }
+    }
+
+    .mini-wa {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      padding: 11px 22px;
+      border-radius: 10px;
+      border: 1px solid rgba(11, 139, 76, 0.28);
+      color: #ffffff;
+      background: var(--green-deep);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.025em;
+      position: relative;
+      z-index: 3;
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.15) inset,
+        0 -1px 0 rgba(0,0,0,0.12) inset,
+        0 6px 18px rgba(11,139,76,0.26),
+        0 2px 5px rgba(11,139,76,0.16);
+      transition: all 180ms ease;
+    }
+
+    .mini-wa:hover {
+      background: #13a85e;
+      transform: translateY(1px);
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.1) inset,
+        0 2px 8px rgba(11,139,76,0.14),
+        0 1px 2px rgba(11,139,76,0.1);
+    }
+
+    .mini-wa:active {
+      background: #097a42;
+      transform: translateY(2px);
+      box-shadow:
+        0 2px 5px rgba(0,0,0,0.14) inset,
+        0 1px 2px rgba(11,139,76,0.08);
+    }
+
+    .cat-panel {
+      background: rgba(255,255,255,0.85);
+      border: 1px solid rgba(11,139,76,0.1);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 30px 26px 26px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cat-index {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--green-bright);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .cat-title {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin: 0 0 0;
+      letter-spacing: -0.02em;
+    }
+
+    .cat-rule {
+      height: 1px;
+      background: linear-gradient(90deg, rgba(11,139,76,0.18), rgba(11,139,76,0.04));
+      margin: 14px 0;
+      border: none;
+    }
+
+    .cat-desc {
+      font-family: "Fraunces", Georgia, serif;
+      font-style: italic;
+      color: #4a5c4d;
+      font-size: 0.94rem;
+      line-height: 1.55;
+      margin: 0 0 18px;
+    }
+
+    .cat-items {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cat-items li {
+      font-size: 0.93rem;
+      color: #334136;
+      font-weight: 500;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(11,139,76,0.07);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cat-items li:last-child { border-bottom: none; }
+
+    .cat-items li::before {
+      content: "";
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--green-soft);
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Keri Crafts home">
+        <img class="nav-logo" src="logo-large.png" alt="Keri Crafts logo" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<span style=&quot;font-family:Recoleta,Georgia,serif;font-size:1.4rem;color:#0b8b4c&quot;>Keri Crafts</span>');" />
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#signature">Offerings</a>
+        <a href="#how-to-order">How to Order</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC—01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="batch-strip">
+    <div class="container batch-strip-inner">Batch KC—01 is now open for pre-orders. Message us on WhatsApp to know what’s included.</div>
+  </div>
+
+  <main id="top">
+    <section class="section hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="card hero-logo-wrap">
+            <img class="hero-logo" src="logo-placeholder.png" alt="Keri Crafts brand mark" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=&quot;hero-logo-fallback&quot;>K</div>');" />
+          </div>
+
+          <div class="hero-copy-block">
+            <div class="preorder-badge">Now open for pre-orders • Batch KC—01</div>
+            <h1>Gujarati craft, shared with care.</h1>
+            <p class="hero-lead">Keri Crafts is a Gujarati craft food brand shaped by seasonal batches, thoughtful making, and a more personal way to order.</p>
+            <div class="hero-copy">
+              <p>Rooted in familiar flavour and careful preparation, each offering is made in limited quantities and shared directly with care.</p>
+            </div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC—01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
+              <a class="btn btn-secondary" href="https://www.instagram.com/keri.crafts/" target="_blank" rel="noopener">Visit Instagram</a>
+            </div>
+            <p class="micro-note">Pre-orders are now open for Batch KC—01. Ask us what’s included in the current batch.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="signature">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Signature Offerings</span>
+          <h2>A closer look at what Keri Crafts offers.</h2>
+          <p>Our offerings are made in limited quantities and may vary by batch and season. We are currently open for pre-orders for Batch KC—01. Message us to know what is available in this batch.</p>
+        </div>
+
+        <div class="signature-grid">
+          <article class="sig-card">
+            <h3>Keri Chundo</h3>
+            <p class="sig-desc">Sweet-spiced grated keri, slow-made to a rich and glossy finish with a familiar Gujarati warmth.</p>
+            <hr class="sig-divider">
+            <ul class="sig-meta">
+              <li><strong>Taste profile:</strong> Sweet, gently spiced, and rounded with a lingering warmth.</li>
+              <li><strong>Best enjoyed with:</strong> Thepla, paratha, khakhra, or even a simple spoonful on the side.</li>
+            </ul>
+            <a class="sig-cta" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC%E2%80%9401.%0A%0AName%3A%0ACity%3A%20%5BMumbai%5D%0AProduct%20Names%3A%20Keri%20Chundo%0ASize%3A%20%5B500g%20%2F%201kg%5D%0AQuantity%3A" target="_blank" rel="noopener">Pre-order Keri Chundo</a>
+          </article>
+
+          <article class="sig-card">
+            <h3>Keri Murabbo</h3>
+            <p class="sig-desc">Soft keri pieces prepared in a gentler, sweeter profile with a thoughtful festive character.</p>
+            <hr class="sig-divider">
+            <ul class="sig-meta">
+              <li><strong>Taste profile:</strong> Soft, mellow, and sweet with a delicate spiced depth.</li>
+              <li><strong>Best enjoyed with:</strong> Rotis, festive meals, or as a sweeter accompaniment at the table.</li>
+            </ul>
+            <a class="sig-cta" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC%E2%80%9401.%0A%0AName%3A%0ACity%3A%20%5BMumbai%5D%0AProduct%20Names%3A%20Keri%20Murabbo%0ASize%3A%20%5B500g%20%2F%201kg%5D%0AQuantity%3A" target="_blank" rel="noopener">Pre-order Keri Murabbo</a>
+          </article>
+
+          <article class="sig-card">
+            <h3>Katki Keri</h3>
+            <p class="sig-desc">Chunk-cut keri gently cooked into a sweet, spiced preparation with a rich bite.</p>
+            <hr class="sig-divider">
+            <ul class="sig-meta">
+              <li><strong>Taste profile:</strong> Textured, sweet-spiced, and fuller in bite and character.</li>
+              <li><strong>Best enjoyed with:</strong> Thepla, phulka, or alongside everyday Gujarati meals.</li>
+            </ul>
+            <a class="sig-cta" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC%E2%80%9401.%0A%0AName%3A%0ACity%3A%20%5BMumbai%5D%0AProduct%20Names%3A%20Katki%20Keri%0ASize%3A%20%5B500g%20%2F%201kg%5D%0AQuantity%3A" target="_blank" rel="noopener">Pre-order Katki Keri</a>
+          </article>
+
+          <article class="sig-card">
+            <h3>God Keri</h3>
+            <p class="sig-desc">Chunk-cut keri tossed in a robust masala, delivering texture, heat, and sharpness.</p>
+            <hr class="sig-divider">
+            <ul class="sig-meta">
+              <li><strong>Taste profile:</strong> Bold, masaledar, and lively with a sharper finish.</li>
+              <li><strong>Best enjoyed with:</strong> Dal-rice, paratha, curd rice, or comfort meals that need a punch.</li>
+            </ul>
+            <a class="sig-cta" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC%E2%80%9401.%0A%0AName%3A%0ACity%3A%20%5BMumbai%5D%0AProduct%20Names%3A%20God%20Keri%0ASize%3A%20%5B500g%20%2F%201kg%5D%0AQuantity%3A" target="_blank" rel="noopener">Pre-order God Keri</a>
+          </article>
+
+          <article class="sig-card">
+            <h3>Vaghariyu</h3>
+            <p class="sig-desc">A bold keri preparation with a distinctive vaghar-led character and a deeply rooted flavour profile.</p>
+            <hr class="sig-divider">
+            <ul class="sig-meta">
+              <li><strong>Taste profile:</strong> Tempered, savoury, and spice-forward with deep Gujarati character.</li>
+              <li><strong>Best enjoyed with:</strong> Thepla, rotli, khichdi, or traditional home-style meals.</li>
+            </ul>
+            <a class="sig-cta" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC%E2%80%9401.%0A%0AName%3A%0ACity%3A%20%5BMumbai%5D%0AProduct%20Names%3A%20Vaghariyu%0ASize%3A%20%5B500g%20%2F%201kg%5D%0AQuantity%3A" target="_blank" rel="noopener">Pre-order Vaghariyu</a>
+          </article>
+
+          <article class="sig-card">
+            <h3>Amba Hardar</h3>
+            <p class="sig-desc">Keri pickle with haldi-led warmth, bringing earthy depth and traditional character.</p>
+            <hr class="sig-divider">
+            <ul class="sig-meta">
+              <li><strong>Taste profile:</strong> Earthy, warm, and grounded with haldi-led depth.</li>
+              <li><strong>Best enjoyed with:</strong> Rotli-shaak, dal-chawal, curd rice, or simple home meals.</li>
+            </ul>
+            <a class="sig-cta" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC%E2%80%9401.%0A%0AName%3A%0ACity%3A%20%5BMumbai%5D%0AProduct%20Names%3A%20Amba%20Hardar%0ASize%3A%20%5B500g%20%2F%201kg%5D%0AQuantity%3A" target="_blank" rel="noopener">Pre-order Amba Hardar</a>
+          </article>
+
+          <article class="sig-card">
+            <h3>Khatta Athanu</h3>
+            <p class="sig-desc">A sharper, tangier keri offering with a lively flavour profile and a more pronounced edge.</p>
+            <hr class="sig-divider">
+            <ul class="sig-meta">
+              <li><strong>Taste profile:</strong> Tangy, punchy, and bright with a lively finish.</li>
+              <li><strong>Best enjoyed with:</strong> Thepla, paratha, khichdi, or whenever a meal needs an instant lift.</li>
+            </ul>
+            <a class="sig-cta" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC%E2%80%9401.%0A%0AName%3A%0ACity%3A%20%5BMumbai%5D%0AProduct%20Names%3A%20Khatta%20Athanu%0ASize%3A%20%5B500g%20%2F%201kg%5D%0AQuantity%3A" target="_blank" rel="noopener">Pre-order Khatta Athanu</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">About Keri Crafts</span>
+          <h2>A brand rooted in craft.</h2>
+        </div>
+
+        <div class="card body-card">
+          <p>Keri Crafts is built around thoughtful Gujarati offerings that feel rooted, considered, and personal rather than mass made.</p>
+          <p style="margin-top:12px;">The brand draws from Gujarati flavour memory and a way of making that values care, patience, and detail. Instead of endless variety or continuous stock, Keri Crafts focuses on smaller batches that feel more intentional, more special, and closer to the maker.</p>
+          <p style="margin-top:12px;">Everything about the brand is designed to feel warm, direct, and thoughtfully presented — from the offerings themselves to the way they are shared and ordered.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="current-batch">
+      <div class="container">
+        <div class="card batch-block">
+          <div class="section-head" style="margin-bottom:14px; max-width:none;">
+            <span class="kicker">Current Batch</span>
+            <h2>Pre-orders are now open for KC—01.</h2>
+            <p>Keri Crafts is currently taking pre-orders for Batch KC—01. This batch is being shared in limited quantities and may include selected sweet preserves, spiced preparations, and tangy pickles based on current availability.</p>
+            <p>Message us on WhatsApp to know what is included in KC—01 and to place your order.</p>
+          </div>
+          <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC—01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Current Offering Categories</span>
+          <h2>Three flavour expressions, one careful batch.</h2>
+        </div>
+
+        <div class="categories-grid">
+          <article class="cat-panel">
+            <div class="cat-index">01</div>
+            <h3 class="cat-title">Sweet Preserves</h3>
+            <hr class="cat-rule">
+            <p class="cat-desc">Softer, sweeter keri expressions layered with warmth and richness.</p>
+            <ul class="cat-items">
+              <li>Keri Chundo</li>
+              <li>Keri Murabbo</li>
+              <li>Katki Keri</li>
+              <li>God Keri</li>
+            </ul>
+            <a class="mini-wa" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC%E2%80%9401.%0A%0AName%3A%0ACity%3A%20%5BMumbai%5D%0AProduct%20Names%3A%20Keri%20Chundo%2C%20Keri%20Murabbo%2C%20Katki%20Keri%2C%20God%20Keri%0ASize%3A%20%5B500g%20%2F%201kg%5D%0AQuantity%3A" target="_blank" rel="noopener">Ask on WhatsApp</a>
+          </article>
+
+          <article class="cat-panel">
+            <div class="cat-index">02</div>
+            <h3 class="cat-title">Spiced Preparations</h3>
+            <hr class="cat-rule">
+            <p class="cat-desc">Bolder, spice-led preparations with depth and Gujarati character.</p>
+            <ul class="cat-items">
+              <li>Vaghariyu</li>
+            </ul>
+            <a class="mini-wa" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC%E2%80%9401.%0A%0AName%3A%0ACity%3A%20%5BMumbai%5D%0AProduct%20Names%3A%20Vaghariyu%0ASize%3A%20%5B500g%20%2F%201kg%5D%0AQuantity%3A" target="_blank" rel="noopener">Ask on WhatsApp</a>
+          </article>
+
+          <article class="cat-panel">
+            <div class="cat-index">03</div>
+            <h3 class="cat-title">Tangy Pickles</h3>
+            <hr class="cat-rule">
+            <p class="cat-desc">Sharper, punchier offerings with a lively and lingering finish.</p>
+            <ul class="cat-items">
+              <li>Amba Hardar</li>
+              <li>Khatta Athanu</li>
+            </ul>
+            <a class="mini-wa" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC%E2%80%9401.%0A%0AName%3A%0ACity%3A%20%5BMumbai%5D%0AProduct%20Names%3A%20Amba%20Hardar%2C%20Khatta%20Athanu%0ASize%3A%20%5B500g%20%2F%201kg%5D%0AQuantity%3A" target="_blank" rel="noopener">Ask on WhatsApp</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gifting">
+      <div class="container">
+        <div class="section-head gifting-head">
+          <span class="kicker">Gifting and Custom Orders</span>
+          <h2>Thoughtful gifting, curated with care.</h2>
+          <p>Selected Keri Crafts offerings can also be prepared for festive gifting, curated requests, and custom inquiries, depending on batch schedule and availability. If you have something specific in mind, message us and we'll guide you through what is currently possible.</p>
+        </div>
+
+        <div class="gifting-grid">
+          <article class="card gifting-item">
+            <h3>Festive Gifting</h3>
+            <p>Thoughtful Gujarati offerings prepared for festive moments, family sharing, and warm gifting.</p>
+          </article>
+
+          <article class="card gifting-item">
+            <h3>Curated Selections</h3>
+            <p>A more considered way to choose from the current batch, based on flavour, occasion, and availability.</p>
+          </article>
+
+          <article class="card gifting-item">
+            <h3>Custom Requests</h3>
+            <p>If you're looking for something specific, we'll be happy to guide you based on the batch and what can be prepared well.</p>
+          </article>
+        </div>
+
+        <div style="margin-top: 28px;">
+          <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20ask%20about%20gifting%20or%20custom%20requests%20for%20Batch%20KC%E2%80%9401.%0A%0AName%3A%0ACity%3A%20%5BMumbai%5D%0AOccasion%20%2F%20Requirement%3A%0AProduct%20Names%3A%0AQuantity%3A%0AMessage%3A" target="_blank" rel="noopener">Message us for gifting and custom requests</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="why-order">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Why Order From Keri Crafts</span>
+        </div>
+
+        <div class="why-grid">
+          <article class="card why-card">
+            <h3>Small-Batch Care</h3>
+            <p>Made in limited quantities with close attention to quality and detail.</p>
+          </article>
+          <article class="card why-card">
+            <h3>Rooted Flavour</h3>
+            <p>Inspired by Gujarati taste traditions and familiar flavour memory.</p>
+          </article>
+          <article class="card why-card">
+            <h3>Thoughtful Presentation</h3>
+            <p>Shaped to feel considered, warm, and gift-worthy.</p>
+          </article>
+          <article class="card why-card">
+            <h3>Personal Ordering Experience</h3>
+            <p>Order directly through WhatsApp for a more human and flexible flow.</p>
+          </article>
+          <article class="card why-card">
+            <h3>Made With Intention</h3>
+            <p>The focus stays on fewer, more thoughtful offerings instead of mass variety.</p>
+          </article>
+          <article class="card why-card">
+            <h3>Suitable for Gifting</h3>
+            <p>Selected offerings work well for festive, family, and custom gifting needs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how-to-order">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">How to Order</span>
+          <h2>Simple, direct, and personal.</h2>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="step-icon">1</div>
+            <h3>Message us</h3>
+            <p>Start on WhatsApp and tell us what you are looking for.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-icon">2</div>
+            <h3>We share availability</h3>
+            <p>We’ll let you know what is currently available and what can be made on request.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-icon">3</div>
+            <h3>Choose your offering</h3>
+            <p>Select what you would like to order, along with quantity or gifting needs.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-icon">4</div>
+            <h3>We confirm details</h3>
+            <p>We confirm the order details, city, dispatch, and any specific requirements.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-icon">5</div>
+            <h3>Order is prepared</h3>
+            <p>Your order is prepared and arranged for delivery or dispatch.</p>
+          </article>
+        </div>
+
+        <div style="margin-top:24px;">
+          <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC—01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">Message us for KC—01</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Frequently Asked Questions</span>
+        </div>
+
+        <div class="faq-grid">
+          <article class="card faq-item">
+            <h3>How do I place an order?</h3>
+            <p>You can message us on WhatsApp and we’ll guide you through current availability, quantities, and the ordering process directly.</p>
+          </article>
+          <article class="card faq-item">
+            <h3>When will my order be shipped?</h3>
+            <p>Orders are shipped on Sunday, and shipment updates will be shared with you directly on WhatsApp.</p>
+          </article>
+          <article class="card faq-item">
+            <h3>How do I know what is currently available?</h3>
+            <p>Our offerings may vary by batch and season. The easiest way to know what is currently available is to message us on WhatsApp or check Instagram for updates.</p>
+          </article>
+          <article class="card faq-item">
+            <h3>Do you take gifting or custom orders?</h3>
+            <p>Yes. Selected gifting and custom requests may be possible depending on availability, batch timing, and order requirements.</p>
+          </article>
+          <article class="card faq-item">
+            <h3>Are you based in Mumbai?</h3>
+            <p>Yes, Keri Crafts is based in Mumbai. Please message us directly for local orders, gifting requests, or delivery-related queries.</p>
+          </article>
+          <article class="card faq-item">
+            <h3>Do you deliver outside Mumbai?</h3>
+            <p>Delivery availability may vary depending on the order and location. Message us with your city and we’ll let you know what is possible.</p>
+          </article>
+          <article class="card faq-item">
+            <h3>Are all offerings available at all times?</h3>
+            <p>No. Many offerings are made in small batches or on request, so availability may change with the batch and the season.</p>
+          </article>
+          <article class="card faq-item">
+            <h3>Can I contact you on Instagram instead?</h3>
+            <p>Yes. Instagram is good for discovery and updates, while WhatsApp is the fastest and most direct route for ordering.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <article class="card contact-panel">
+          <h3>Message us to know what’s currently available.</h3>
+          <p>Keri Crafts is based in Mumbai and designed to feel direct and approachable. Ask about current batches, gifting, custom requests, or delivery details.</p>
+          <div class="contact-list">
+            <a href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC—01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">WhatsApp: +91 92233 81903</a>
+            <a href="https://www.instagram.com/keri.crafts/" target="_blank" rel="noopener">Instagram: @keri.crafts</a>
+          </div>
+          <div class="hero-actions" style="margin-bottom:0;">
+            <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC—01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
+            <a class="btn btn-secondary" href="https://www.instagram.com/keri.crafts/" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </article>
+
+        <article class="card inquiry-panel" id="inquiry">
+          <h3>We’d love to hear from you</h3>
+          <p style="margin-top:8px; color:#4a584c;">Ask us about current offerings, gifting, custom requests, or Batch KC—01.</p>
+          <form class="inquiry-form" id="inquiryForm" novalidate>
+            <div class="form-grid">
+              <label>Name
+                <input type="text" name="name" id="name" placeholder="Your name" />
+              </label>
+              <label>Phone Number
+                <input type="tel" name="phone" id="phone" placeholder="Your phone number" />
+              </label>
+            </div>
+            <div class="form-grid">
+              <label>City
+                <input type="text" name="city" id="city" value="Mumbai" placeholder="Your city" />
+              </label>
+              <label>Email <span style="font-weight:400;color:#8a9b8c">(optional)</span>
+                <input type="email" name="email" id="email" placeholder="Your email address" />
+              </label>
+            </div>
+            <div class="form-grid">
+              <label>Type of Inquiry
+                <select name="type" id="type">
+                  <option value="Personal order">Personal order</option>
+                  <option value="Gifting inquiry">Gifting inquiry</option>
+                  <option value="Custom order">Custom order</option>
+                  <option value="General inquiry">General inquiry</option>
+                </select>
+              </label>
+            </div>
+            <label>Message
+              <textarea name="message" id="message" placeholder="Your message or inquiry..."></textarea>
+            </label>
+            <p class="form-error" id="formError">Please fill in your Name and Phone Number.</p>
+            <button class="btn btn-primary" type="button" id="sendInquiryBtn">Send Inquiry</button>
+            <p class="form-note">For the quickest response, you can also message us directly on WhatsApp.</p>
+          </form>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="logo-large.png" alt="Keri Crafts logo" class="nav-logo" style="height:64px; margin-bottom:12px;" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<strong>Keri Crafts</strong>');" />
+        <div>Gujarati craft, shared in small batches and with care.</div>
+        <div style="margin-top:6px; color:#6a756c;">Based in Mumbai • Pre-orders open for Batch KC—01</div>
+      </div>
+
+      <div class="footer-links">
+        <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC%E2%80%9401.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-secondary" href="https://www.instagram.com/keri.crafts/" target="_blank" rel="noopener">Instagram</a>
+        <a class="btn btn-tertiary" href="#inquiry">Inquiry Form</a>
+      </div>
+    </div>
+    <div class="container" style="padding-top:14px; border-top:1px solid rgba(11,139,76,0.08); margin-top:18px; color:#677268; font-size:0.9rem;">
+      For current availability, gifting, or custom requests, message us on WhatsApp.
+    </div>
+  </footer>
+
+  <div class="sticky-cta">
+    <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20pre-order%20from%20Batch%20KC—01.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0AQuantity%3A" target="_blank" rel="noopener">Pre-order on WhatsApp</a>
+  </div>
+
+  <script>
+    (function () {
+      const btn = document.getElementById(‘sendInquiryBtn’);
+      if (!btn) return;
+
+      const error = document.getElementById(‘formError’);
+      const fields = {
+        name:    document.getElementById(‘name’),
+        phone:   document.getElementById(‘phone’),
+        email:   document.getElementById(‘email’),
+        city:    document.getElementById(‘city’),
+        type:    document.getElementById(‘type’),
+        message: document.getElementById(‘message’)
+      };
+
+      btn.addEventListener(‘click’, function () {
+        const values = {};
+        Object.entries(fields).forEach(function (pair) {
+          values[pair[0]] = pair[1] ? (pair[1].value || ‘’).trim() : ‘’;
+        });
+
+        Object.values(fields).forEach(function (el) { if (el) el.classList.remove(‘invalid’); });
+        if (error) error.style.display = ‘none’;
+
+        var hasError = false;
+        if (!values.name)  { fields.name.classList.add(‘invalid’);  hasError = true; }
+        if (!values.phone) { fields.phone.classList.add(‘invalid’); hasError = true; }
+
+        if (hasError) {
+          if (error) error.style.display = ‘block’;
+          return;
+        }
+
+        var emailLine = values.email ? (‘\nEmail: ‘ + values.email) : ‘’;
+        var msgLine   = values.message ? (‘\nMessage: ‘ + values.message) : ‘’;
+        var waMsg = ‘Hi, I\u2019d like to send an inquiry to Keri Crafts regarding Batch KC\u201401.’
+          + ‘\n\nName: ‘            + values.name
+          + ‘\nPhone Number: ‘      + values.phone
+          + emailLine
+          + ‘\nCity: ‘             + values.city
+          + ‘\nType of Inquiry: ‘  + values.type
+          + msgLine;
+
+        var a = document.createElement(‘a’);
+        a.href = ‘https://wa.me/919223381903?text=’ + encodeURIComponent(waMsg);
+        a.target = ‘_blank’;
+        a.rel = ‘noopener’;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      });
+    })();
+  </script>
+  <script
+    async
+    src="https://app.querygen.ai/widget-sdk/tldr-wa-widget.js"
+    data-phone="919223381903"
+    data-message="Kem cho. Welcome to Keri Crafts.
+
+Thoughtful Gujarati flavours, made in small batches and shared with care.
+
+We’re currently taking pre-orders for Batch KC01 and would love to help you choose something for your table or for gifting.
+
+
+
+"
+    data-accent-color="#25D366"
+    data-title="Keri Crafts | Batch KC01"
+    data-subtitle="Warm Gujarati flavours • Based in Mumbai"
+    data-placeholder="Are you craving something sweet, tangy, or boldly spiced?"
+  ></script>
+</body>
+</html>
