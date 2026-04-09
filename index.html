@@ -191,12 +191,12 @@
     }
 
     .hero {
-      padding: 40px 0 30px;
+      padding: 32px 0 24px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(280px, 40%) minmax(0, 60%);
+      grid-template-columns: minmax(200px, 38%) minmax(0, 62%);
       gap: 40px;
       align-items: center;
     }
@@ -212,8 +212,15 @@
     .hero-logo-wrap {
       display: grid;
       place-items: center;
-      min-height: 260px;
+      min-height: 220px;
       padding: 18px;
+    }
+
+    .logo-fallback {
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      font-family: "Recoleta", Georgia, serif;
     }
 
     .hero-logo {
@@ -228,10 +235,10 @@
 
     .hero h1 {
       font-weight: 900;
-      font-size: clamp(2.7rem, 5.1vw, 4.6rem);
-      line-height: 0.95;
-      margin-bottom: 16px;
-      max-width: 10.5ch;
+      font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+      line-height: 1.05;
+      margin-bottom: 14px;
+      max-width: 18ch;
     }
 
     .hero-lead {
@@ -545,8 +552,8 @@
       }
 
       .hero-grid {
-        grid-template-columns: minmax(240px, 36%) minmax(0, 64%);
-        gap: 28px;
+        grid-template-columns: minmax(200px, 34%) minmax(0, 66%);
+        gap: 24px;
       }
 
       .contact-grid > :first-child,
@@ -564,7 +571,11 @@
       .nav-links a:not(.btn) { display: none; }
       .hero { padding-top: 34px; }
 
-      .hero-grid,
+      .hero-grid {
+        grid-template-columns: minmax(140px, 36%) minmax(0, 64%);
+        gap: 20px;
+      }
+
       .signature-grid,
       .categories-grid,
       .why-grid,
@@ -577,16 +588,11 @@
       }
 
       .hero-logo-wrap {
-        min-height: 220px;
-        order: 1;
-      }
-
-      .hero-copy-block {
-        order: 2;
+        min-height: 160px;
       }
 
       .hero h1 {
-        font-size: 3rem;
+        font-size: 1.6rem;
         max-width: none;
       }
 
@@ -620,22 +626,24 @@
 
   <main id="top">
     <section class="section hero">
-      <div class="container hero-grid">
-        <div class="card hero-logo-wrap">
-          <img class="hero-logo" src="logo-placeholder.png" alt="Keri Crafts brand mark" onerror="this.outerHTML='<div style=\"font-size:5rem;font-weight:700;color:#0b8b4c;font-family:Recoleta,Georgia,serif;\">K</div>'" />
-        </div>
+      <div class="container">
+        <div class="hero-grid">
+          <div class="card hero-logo-wrap">
+            <img class="hero-logo" src="logo-placeholder.png" alt="Keri Crafts brand mark" onerror="this.style.display=’none’;this.parentNode.insertAdjacentHTML(‘beforeend’,’<div class=logo-fallback>K</div>’)" />
+          </div>
 
-        <div class="hero-copy-block">
-          <h1>Gujarati craft, shared with care.</h1>
-          <p class="hero-lead">Keri Crafts is a Gujarati craft food brand shaped by seasonal batches, thoughtful making, and a more personal way to order.</p>
-          <div class="hero-copy">
-            <p>Rooted in familiar flavour and careful preparation, each offering is made in limited quantities and shared directly with care.</p>
+          <div class="hero-copy-block">
+            <h1>Gujarati craft, shared with care.</h1>
+            <p class="hero-lead">Keri Crafts is a Gujarati craft food brand shaped by seasonal batches, thoughtful making, and a more personal way to order.</p>
+            <div class="hero-copy">
+              <p>Rooted in familiar flavour and careful preparation, each offering is made in limited quantities and shared directly with care.</p>
+            </div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20place%20an%20order.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0ASize%3A%0AQuantity%3A" target="_blank" rel="noopener">Order on WhatsApp</a>
+              <a class="btn btn-secondary" href="https://www.instagram.com/keri.crafts/" target="_blank" rel="noopener">Visit Instagram</a>
+            </div>
+            <p class="micro-note">Ask us what’s currently available.</p>
           </div>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/919223381903?text=Hi%2C%20I%20just%20discovered%20Keri%20Crafts%20and%20would%20love%20to%20place%20an%20order.%0A%0AName%3A%0ACity%3A%0AWhat%20would%20you%20like%20to%20order%3A%0ASize%3A%0AQuantity%3A" target="_blank" rel="noopener">Order on WhatsApp</a>
-            <a class="btn btn-secondary" href="https://www.instagram.com/keri.crafts/" target="_blank" rel="noopener">Visit Instagram</a>
-          </div>
-          <p class="micro-note">Ask us what’s currently available.</p>
         </div>
       </div>
     </section>
